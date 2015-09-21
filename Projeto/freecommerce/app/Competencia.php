@@ -9,6 +9,7 @@ class Competencia extends Model
     protected $table = 'competencias';
 
     protected $fillable = [
+        'id',
         'idCategoria',
         'nome'
     ];

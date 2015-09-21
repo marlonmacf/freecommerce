@@ -13,7 +13,8 @@ class CreateCompetenciasTable extends Migration
     public function up()
     {
         Schema::create('competencias', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id')->unsigned();
+            $table->primary('id');
             $table->integer('idCategoria')->unsigned();
             $table->string('nome', 100);
 

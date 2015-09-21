@@ -11,7 +11,22 @@
 |
 */
 
-$factory->define(FreeCommerce\User::class, function (Faker\Generator $faker) {
+$factory->define(FreeCommerce\Categoria::class, function (Faker\Generator $faker) {
+    return [
+        'id' => null,
+        'nome' => $faker->word,
+    ];
+});
+
+$factory->define(FreeCommerce\Competencia::class, function (Faker\Generator $faker) {
+    return [
+        'id' => null,
+        'idCategoria' => null,
+        'nome' => $faker->word,
+    ];
+});
+
+$factory->define(FreeCommerce\Perfil::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->email,

@@ -14,7 +14,17 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call(UserTableSeeder::class);
+        $this->call(CategoriasSeeder::class);
+        $this->call(CompetenciasSeeder::class);
+        $this->call(PerfisSeeder::class);
+        $this->call(ServicosSeeder::class);
+        $this->call(ImagensSeeder::class);
+        $this->call(ComentariosSeeder::class);
+        $this->call(TagsSeeder::class);
+        $this->call(Servicos_has_TagsSeeder::class);
+        $this->call(ExtrasSeeder::class);
+        $this->call(SolicitacoesSeeder::class);
+        $this->call(Solicitacoes_has_ExtrasSeeder::class);
 
         Model::reguard();
     }
