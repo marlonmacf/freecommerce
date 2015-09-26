@@ -34,4 +34,9 @@ class Comentario extends Model
     {
         return $this->belongsTo('FreeCommerce\Servico');
     }
+
+    public function Perfil()
+    {
+        return $this->belongsTo('FreeCommerce\Perfil');
+    }
 }

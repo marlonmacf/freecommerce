@@ -42,4 +42,9 @@ class Perfil extends Model implements
     {
         return $this->hasMany('FreeCommerce\Solicitacao');
     }
+
+    public function Comentarios()
+    {
+        return $this->hasMany('FreeCommerce\Cometario');
+    }
 }

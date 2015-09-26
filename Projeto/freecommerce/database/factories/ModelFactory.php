@@ -28,9 +28,10 @@ $factory->define(FreeCommerce\Competencia::class, function (Faker\Generator $fak
 
 $factory->define(FreeCommerce\Perfil::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
+        'nome' => $faker->name,
         'email' => $faker->email,
         'password' => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
+        'descricao' => $faker->text,
     ];
 });
