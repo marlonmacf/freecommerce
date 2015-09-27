@@ -11,6 +11,8 @@ class ExtrasSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('extras')->delete();
+
+        factory('FreeCommerce\Extra', 50)->create();
     }
 }

@@ -11,6 +11,8 @@ class ComentariosSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('comentarios')->delete();
+
+        factory('FreeCommerce\Comentario', 50)->create();
     }
 }

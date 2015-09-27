@@ -48,10 +48,45 @@ $factory->define(FreeCommerce\Servico::class, function (Faker\Generator $faker) 
 
 $factory->define(FreeCommerce\Comentario::class, function (Faker\Generator $faker) {
     return [
-        'idServico' => $faker->numberBetween(1, 1000),
+        'idServico' => $faker->numberBetween(1, 100),
         'idPerfil' => $faker->numberBetween(1, 11),
-        //'idComentario' => null,
+        //'idComentario' => $faker->optional($weight = 0.1)->numberBetween(1, 100),
         'descricao' => $faker->text,
-        'avaliacao' => $faker->numberBetween(0,5),
+        'avaliacao' => $faker->numberBetween(0, 5),
+    ];
+});
+
+$factory->define(FreeCommerce\Tag::class, function (Faker\Generator $faker) {
+    return [
+        'nome' => $faker->unique()->word,
+    ];
+});
+
+$factory->define(FreeCommerce\Servico_has_tag::class, function (Faker\Generator $faker) {
+    return [
+        'idServico' => $faker->numberBetween(1, 100),
+        'idTag' => $faker->numberBetween(1, 100),
+    ];
+});
+
+$factory->define(FreeCommerce\Extra::class, function (Faker\Generator $faker) {
+    return [
+        'idServico' => $faker->numberBetween(1, 100),
+        'descricao' => $faker->text,
+        'valor' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL),
+    ];
+});
+
+$factory->define(FreeCommerce\Solicitacao::class, function (Faker\Generator $faker) {
+    return [
+        'idPerfil' => $faker->numberBetween(1, 11),
+        'idServico' => $faker->numberBetween(1, 100),
+    ];
+});
+
+$factory->define(FreeCommerce\Solicitacao_has_Extra::class, function (Faker\Generator $faker) {
+    return [
+        'idSolicitacao' => $faker->numberBetween(1, 50),
+        'idExtra' => $faker->numberBetween(1, 50),
     ];
 });

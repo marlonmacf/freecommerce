@@ -11,6 +11,8 @@ class TagsSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('tags')->delete();
+
+        factory('FreeCommerce\Tag', 100)->create();
     }
 }

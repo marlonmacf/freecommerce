@@ -11,6 +11,8 @@ class Servicos_has_TagsSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('servicos_has_tags')->delete();
+
+        factory('FreeCommerce\Servico_has_tag', 200)->create();
     }
 }

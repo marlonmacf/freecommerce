@@ -11,6 +11,8 @@ class Solicitacoes_has_ExtrasSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('solicitacoes_has_extras')->delete();
+
+        factory('FreeCommerce\Solicitacao_has_Extra', 100)->create();
     }
 }
