@@ -13,7 +13,7 @@ class CompetenciaRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,16 @@ class CompetenciaRequest extends Request
      */
     public function rules()
     {
-        return [
-            //
-        ];
+        $result = $this->route()->getParameter('admin/competencias');
+        $rules['idCategoria'] = 'required';
+        $rules['nome'] = 'required | unique:mysql.Competencias,nome,' . $result;
+        return $rules;
+    }
+
+    public function attributes()
+    {
+        $attributes['idCategoria'] = 'Categoria';
+        $attributes['nome'] = 'Nome';
+        return $attributes;
     }
 }

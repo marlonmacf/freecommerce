@@ -13,7 +13,7 @@ class CategoriaRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,13 +24,13 @@ class CategoriaRequest extends Request
     public function rules()
     {
         $result = $this->route()->getParameter('admin/categorias');
-        $rules['nome'] = 'required | unique:sqlsrv.vlib.Autor,nomeAutor,' .$result;
+        $rules['nome'] = 'required | unique:mysql.Categorias,nome,' . $result;
         return $rules;
     }
 
     public function attributes()
     {
-        $attributes['nomeAutor'] = 'Nome';
+        $attributes['nome'] = 'Nome';
         return $attributes;
     }
 }

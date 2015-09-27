@@ -16,7 +16,7 @@ class CreateCompetenciasTable extends Migration
             $table->integer('id')->unsigned();
             $table->primary('id');
             $table->integer('idCategoria')->unsigned();
-            $table->string('nome', 100);
+            $table->string('nome', 100)->unique();
 
             $table->foreign('idCategoria')->references('id')->on('categorias');
             $table->timestamps();
