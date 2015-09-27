@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10b8df12-71ca-4f96-8a37-d072c5743085" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Requests/Admin/CategoriaRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Requests/Admin/CompetenciaRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Requests/Controle/PerfilCreateRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Requests/Controle/PerfilUpdatedRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Requests/Busca/ServicoRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Requests/Controle/ServicoRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Requests/Busca/SolicitacaoRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Requests/Controle/SolicitacaoRequest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="freecommerce.iws" />
@@ -472,7 +464,13 @@
       <option name="project" value="LOCAL" />
       <updated>1443381364108</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Request categorias">
+      <created>1443382296661</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1443382296661</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -522,7 +520,8 @@
     <MESSAGE value="Fakers para Comentarios, Tags, Servicos_has_Tags, Extras, Solicitacoes, Solicitacoes_has_Extras. Definido fakers na classe ModelFactory." />
     <MESSAGE value="Rotas e Controllers" />
     <MESSAGE value="Middlewares de rotas para admin e controle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Middlewares de rotas para admin e controle" />
+    <MESSAGE value="Request categorias" />
+    <option name="LAST_COMMIT_MESSAGE" value="Request categorias" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
