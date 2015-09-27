@@ -14,3 +14,36 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController'
+]);
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('categorias', 'Admin\CategoriaController');
+    Route::resource('competencias', 'Admin\CompetenciaController');
+});
+
+Route::group(['prefix' => 'busca'], function () {
+    Route::resource('servico', 'Busca\ServicoController@busca');
+    Route::resource('solicitacao', 'Busca\SolicitacaoController@busca');
+});
+
+Route::group(['prefix' => 'controle'], function () {
+    Route::resource('perfil', 'Controle\PerfilController');
+    Route::resource('servico', 'Controle\ServicoController');
+    Route::resource('solicitacao', 'Controle\SolicitacaoController');
+    Route::resource('pos-venda', 'Controle\PosVendaController');
+});
+
+//Route::resource('photo', 'PhotoController');
+//
+//Verb	        Path	                Action	    Route Name
+//GET	        /photo	                index	    photo.index
+//GET	        /photo/create	        create	    photo.create
+//POST	        /photo	                store	    photo.store
+//GET	        /photo/{photo}	        show	    photo.show
+//GET	        /photo/{photo}/edit	    edit	    photo.edit
+//PUT/PATCH	    /photo/{photo}	        update	    photo.update
+//DELETE	    /photo/{photo}	        destroy	    photo.destroy
