@@ -13,7 +13,7 @@ class PerfilCreateRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,17 @@ class PerfilCreateRequest extends Request
      */
     public function rules()
     {
-        return [
-            //
-        ];
+        $rules['nome'] = 'required';
+        $rules['email'] = 'required | email | unique:mysql.Perfil,email';
+        $rules['senha'] = 'required | min:8';
+        return $rules;
+    }
+
+    public function attributes()
+    {
+        $attributes['nome'] = 'Nome';
+        $attributes['email'] = 'E-mail';
+        $attributes['senha'] = 'Senha';
+        return $attributes;
     }
 }
