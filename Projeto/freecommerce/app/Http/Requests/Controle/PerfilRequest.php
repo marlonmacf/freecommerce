@@ -1,10 +1,10 @@
 <?php
 
-namespace FreeCommerce\Http\Requests\Busca;
+namespace FreeCommerce\Http\Requests\Controle;
 
 use FreeCommerce\Http\Requests\Request;
 
-class ServicoRequest extends Request
+class PerfilRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,16 +23,17 @@ class ServicoRequest extends Request
      */
     public function rules()
     {
-        $rules['idCompetencia'] = 'required';
-        $rules['titulo'] = 'required';
-        $rules['descricao'] = 'required';
+        $rules['nome'] = 'required';
+        $rules['email'] = 'required | email | unique:mysql.Perfil,email';
+        $rules['senha'] = 'required | min:8';
+        //$rules['descricao'] = 'required | min:8';
         return $rules;
     }
 
     public function attributes()
     {
-        $attributes['idCompetencia'] = 'Competencia';
-        $attributes['titulo'] = 'Titulo';
+        $attributes['nome'] = 'Nome';
+        $attributes['email'] = 'E-mail';
         $attributes['descricao'] = 'Descricao';
         return $attributes;
     }
