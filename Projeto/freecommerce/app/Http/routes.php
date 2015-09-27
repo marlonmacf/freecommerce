@@ -20,7 +20,7 @@ Route::controllers([
     'password' => 'Auth\PasswordController'
 ]);
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'where' => ['id' => '[0-9]+']], function () {
     Route::resource('categorias', 'Admin\CategoriaController');
     Route::resource('competencias', 'Admin\CompetenciaController');
 });
@@ -30,7 +30,7 @@ Route::group(['prefix' => 'busca'], function () {
     Route::resource('solicitacao', 'Busca\SolicitacaoController@busca');
 });
 
-Route::group(['prefix' => 'controle'], function () {
+Route::group(['prefix' => 'controle', 'middleware' => 'auth'], function () {
     Route::resource('perfil', 'Controle\PerfilController');
     Route::resource('servico', 'Controle\ServicoController');
     Route::resource('solicitacao', 'Controle\SolicitacaoController');
