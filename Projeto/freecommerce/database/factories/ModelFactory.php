@@ -35,3 +35,23 @@ $factory->define(FreeCommerce\Perfil::class, function (Faker\Generator $faker) {
         'descricao' => $faker->text,
     ];
 });
+
+$factory->define(FreeCommerce\Servico::class, function (Faker\Generator $faker) {
+    return [
+        'idPerfil' => $faker->numberBetween(1, 11),
+        'idCompetencia' => $faker->numberBetween(1, 117),
+        'titulo' => $faker->word,
+        'descricao' => $faker->text,
+        //'duracao' => $faker->text,
+    ];
+});
+
+$factory->define(FreeCommerce\Comentario::class, function (Faker\Generator $faker) {
+    return [
+        'idServico' => $faker->numberBetween(1, 1000),
+        'idPerfil' => $faker->numberBetween(1, 11),
+        //'idComentario' => null,
+        'descricao' => $faker->text,
+        'avaliacao' => $faker->numberBetween(0,5),
+    ];
+});

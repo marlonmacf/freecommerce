@@ -11,6 +11,8 @@ class ServicosSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('servicos')->delete();
+
+        factory('FreeCommerce\Servico', 1000)->create();
     }
 }
