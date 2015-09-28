@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.admin');
 });
 
 Route::controllers([
@@ -21,20 +21,20 @@ Route::controllers([
 ]);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'where' => ['id' => '[0-9]+']], function () {
-    Route::resource('categorias', 'Admin\CategoriaController');
-    Route::resource('competencias', 'Admin\CompetenciaController');
+    Route::resource('categorias', 'admin\CategoriaController');
+    Route::resource('competencias', 'admin\CompetenciaController');
 });
 
 Route::group(['prefix' => 'busca'], function () {
-    Route::resource('servico', 'Busca\ServicoController@busca');
-    Route::resource('solicitacao', 'Busca\SolicitacaoController@busca');
+    Route::resource('servico', 'busca\ServicoController@busca');
+    Route::resource('solicitacao', 'busca\SolicitacaoController@busca');
 });
 
 Route::group(['prefix' => 'controle', 'middleware' => 'auth'], function () {
-    Route::resource('perfil', 'Controle\PerfilController');
-    Route::resource('servico', 'Controle\ServicoController');
-    Route::resource('solicitacao', 'Controle\SolicitacaoController');
-    Route::resource('pos-venda', 'Controle\PosVendaController');
+    Route::resource('perfil', 'controle\PerfilController');
+    Route::resource('servico', 'controle\ServicoController');
+    Route::resource('solicitacao', 'controle\SolicitacaoController');
+    Route::resource('pos-venda', 'controle\PosVendaController');
 });
 
 //Route::resource('photo', 'PhotoController');
