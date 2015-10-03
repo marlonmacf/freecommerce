@@ -9,7 +9,7 @@ class Servico extends Model
     protected $table = 'servicos';
 
     protected $fillable = [
-        'idPerfil',
+        'idUser',
         'idCompetencia',
         'titulo',
         'descricao',

@@ -4,7 +4,7 @@ namespace FreeCommerce\Http\Requests\Controle;
 
 use FreeCommerce\Http\Requests\Request;
 
-class PerfilRequest extends Request
+class UsersRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.

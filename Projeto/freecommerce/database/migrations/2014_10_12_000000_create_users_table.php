@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePerfisTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreatePerfisTable extends Migration
      */
     public function up()
     {
-        Schema::create('perfis', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome', 100);
             $table->string('email', 100)->unique();
@@ -31,6 +31,6 @@ class CreatePerfisTable extends Migration
      */
     public function down()
     {
-        Schema::drop('perfis');
+        Schema::drop('users');
     }
 }

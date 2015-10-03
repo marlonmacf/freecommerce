@@ -14,10 +14,10 @@ class CreateSolicitacoesTable extends Migration
     {
         Schema::create('solicitacoes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('idPerfil')->unsigned();
+            $table->bigInteger('idUser')->unsigned();
             $table->bigInteger('idServico')->unsigned();
 
-            $table->foreign('idPerfil')->references('id')->on('perfis');
+            $table->foreign('idUser')->references('id')->on('users');
             $table->foreign('idServico')->references('id')->on('servicos');
             $table->timestamps();
         });

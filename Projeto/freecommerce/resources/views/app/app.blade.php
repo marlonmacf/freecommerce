@@ -21,6 +21,7 @@
 <body>
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
+
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 					<span class="sr-only">Toggle Navigation</span>
@@ -50,6 +51,7 @@
 					@endif
 				</ul>
 			</div>
+
 		</div>
 	</nav>
 

@@ -14,13 +14,13 @@ class CreateServicosTable extends Migration
     {
         Schema::create('servicos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('idPerfil')->unsigned();
+            $table->bigInteger('idUser')->unsigned();
             $table->integer('idCompetencia')->unsigned();
             $table->string('titulo', 100);
             $table->string('descricao', 200);
             $table->string('duracao', 50)->nullable();
 
-            $table->foreign('idPerfil')->references('id')->on('perfis');
+            $table->foreign('idUser')->references('id')->on('users');
             $table->foreign('idCompetencia')->references('id')->on('competencias');
             $table->timestamps();
         });

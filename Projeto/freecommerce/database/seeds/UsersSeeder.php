@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PerfisSeeder extends Seeder
+class UsersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,9 +11,9 @@ class PerfisSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('perfis')->delete();//truncate();
+        DB::table('users')->delete();//truncate();
 
-        factory('FreeCommerce\Perfil')->create([
+        factory('FreeCommerce\User')->create([
             'nome' => 'Marlon Andrel',
             'email' => 'marlonmacf@gmail.com',
             'password' => Hash::make(123456),
@@ -21,6 +21,6 @@ class PerfisSeeder extends Seeder
             //'remember_token' => Hash::make(123456),
         ]);
 
-        factory('FreeCommerce\Perfil', 10)->create();
+        factory('FreeCommerce\User', 10)->create();
     }
 }

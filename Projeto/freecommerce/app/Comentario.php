@@ -10,6 +10,7 @@ class Comentario extends Model
 
     protected $fillable = [
         'idServico',
+        'isUser',
         'idComentario',
         'descricao',
         'avaliacao'

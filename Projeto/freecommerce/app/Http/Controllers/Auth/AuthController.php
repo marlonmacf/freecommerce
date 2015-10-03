@@ -36,14 +36,15 @@ class AuthController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'nome' => 'required|max:100',
+            'email' => 'required|email|max:100|unique:users',
+            'descricao' => 'required|max:100',
             'password' => 'required|confirmed|min:6',
         ]);
     }
@@ -51,15 +52,17 @@ class AuthController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return User
      */
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'nome' => $data['nome'],
             'email' => $data['email'],
+            'descricao' => $data['descricao'],
             'password' => bcrypt($data['password']),
+            'remember_token' => bcrypt($data['password']),
         ]);
     }
 }

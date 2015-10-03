@@ -9,7 +9,7 @@ class Solicitacao extends Model
     protected $table = 'solicitacoes';
 
     protected $fillable = [
-        'idPerfil',
+        'idUser',
         'idServico'
     ];
 

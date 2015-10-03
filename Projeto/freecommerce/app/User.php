@@ -17,13 +17,14 @@ class User extends Model implements
 {
     use Authenticatable, Authorizable, CanResetPassword;
 
-    protected $table = 'perfis';
+    protected $table = 'users';
 
     protected $fillable = [
-        'name',
+        'nome',
+        'descricao',
         'email',
         'password',
-        'descricao'
+        'remember_token',
     ];
 
     protected $hidden = [
