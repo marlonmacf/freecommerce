@@ -83,4 +83,5 @@ class CategoriaController extends Controller
     {
         //
     }
+
 }

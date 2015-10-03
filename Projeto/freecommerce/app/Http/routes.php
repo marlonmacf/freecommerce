@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('app.app');
+    return view('app.home.index.index');
 });
 
 Route::controllers([
@@ -26,8 +26,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'where' => ['id' => '
 });
 
 Route::group(['prefix' => 'busca'], function () {
-    Route::resource('servico', 'busca\ServicoController@busca');
-    Route::resource('solicitacao', 'busca\SolicitacaoController@busca');
+    Route::get('servico', ['as' => 'busca.servicos', 'uses' => 'controle\ServicoController@busca']);
 });
 
 Route::group(['prefix' => 'controle', 'middleware' => 'auth'], function () {
