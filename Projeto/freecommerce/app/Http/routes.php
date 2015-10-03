@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('admin.admin');
+    return view('app.app');
 });
 
 Route::controllers([

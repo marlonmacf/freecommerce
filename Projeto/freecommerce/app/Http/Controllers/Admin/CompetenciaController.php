@@ -25,7 +25,7 @@ class CompetenciaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.competencias.create.index');
     }
 
     /**
