@@ -2,22 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10b8df12-71ca-4f96-8a37-d072c5743085" name="Default" comment="VISUAL - Auth&#10;acesso @section('content')&#10;registro @section('content')&#10;&#10;PROJETO - Criar e acessar conta&#10;Implementar padrão de acesso e registro do laravel">
-      <change type="MOVED" beforePath="C:\Users\marlo\Documents\GitHub\freecommerce\Projeto\freecommerce\app\Http\Requests\Controle\PerfilRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/Controle/UsersRequest.php" />
-      <change type="MOVED" beforePath="C:\Users\marlo\Documents\GitHub\freecommerce\Projeto\freecommerce\database\migrations\2014_10_12_000000_create_perfis_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-      <change type="MOVED" beforePath="C:\Users\marlo\Documents\GitHub\freecommerce\Projeto\freecommerce\database\seeds\PerfisSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/UsersSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_09_20_144354_create_servicos_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_09_20_144354_create_servicos_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_09_20_144520_create_comentarios_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_09_20_144520_create_comentarios_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_09_20_144557_create_solicitacoes_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_09_20_144557_create_solicitacoes_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Comentario.php" afterPath="$PROJECT_DIR$/app/Comentario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/factories/ModelFactory.php" afterPath="$PROJECT_DIR$/database/factories/ModelFactory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Servico.php" afterPath="$PROJECT_DIR$/app/Servico.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Solicitacao.php" afterPath="$PROJECT_DIR$/app/Solicitacao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/app/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/app/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/app/auth/register.blade.php" afterPath="$PROJECT_DIR$/resources/views/app/auth/register.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="freecommerce.iws" />
@@ -725,7 +709,13 @@
       <option name="project" value="LOCAL" />
       <updated>1443406754496</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="VISUAL - Auth&#10;acesso @section('content')&#10;registro @section('content')&#10;&#10;PROJETO - Criar e acessar conta&#10;Implementar padrão de acesso e registro do laravel">
+      <created>1443894510309</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1443894510309</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
