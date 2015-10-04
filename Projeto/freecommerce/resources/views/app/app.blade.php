@@ -22,6 +22,8 @@
 
 <nav class="navbar navbar">
 
+    <br />
+
     <div class="container">
 
         <div class="navbar-header">
@@ -43,11 +45,10 @@
                        aria-expanded="false"><i class="glyphicon glyphicon-user"></i> {{ Auth::user()->nome }} <span
                                 class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#"> Minhas Vendas </a></li>
-                        <li><a href="#"> Minhas Solicitacoes </a></li>
-                        <li><a href="#"> Meu Perfil </a></li>
-                        <div class="nav-divider"></div>
-                        <li><a href="#"> Cofiguracoes </a></li>
+                        <li><a href="{{ route('controle.servico.index') }}"> Meus Servicos </a></li>
+                        <li><a href="{{ route('controle.venda.index') }}"> Minhas Vendas </a></li>
+                        <li><a href="{{ route('controle.solicitacao.index') }}"> Minhas Solicitacoes </a></li>
+                        <li><a href="{{ route('controle.perfil.index') }}"> Meu Perfil </a></li>
                         <div class="nav-divider"></div>
                         <li><a href="#"> Ajuda </a></li>
                         <div class="nav-divider"></div>
@@ -57,25 +58,6 @@
             @endif
         </ul>
 
-    </div>
-
-    <div class="row">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid  col-md-12 col-md-offset-1">
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li><a href="{{ route('busca.servicos') }}">Design Grafico</a></li>
-                        <li><a href="{{ url('/') }}">Marketing Digital</a></li>
-                        <li><a href="{{ url('/') }}">Escrita e Traducao</a></li>
-                        <li><a href="{{ url('/') }}">Video e Animacao</a></li>
-                        <li><a href="{{ url('/') }}">Musica e Audio</a></li>
-                        <li><a href="{{ url('/') }}">Programacao e Tecnologia</a></li>
-                        <li><a href="{{ url('/') }}">Publicidade</a></li>
-                        <li><a href="{{ url('/') }}">Mais</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
     </div>
 
 </nav>

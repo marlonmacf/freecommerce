@@ -1,6 +1,9 @@
 @extends('app.app')
 
 @section('content')
+
+    @include('app.partials.menuCategorias')
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">

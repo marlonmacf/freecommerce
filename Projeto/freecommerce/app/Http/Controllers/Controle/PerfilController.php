@@ -15,7 +15,7 @@ class PerfilController extends Controller
      */
     public function index()
     {
-        //
+        return view('app.controle.perfil.index.index');
     }
 
     /**

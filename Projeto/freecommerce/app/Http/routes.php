@@ -32,6 +32,7 @@ Route::group(['prefix' => 'busca'], function () {
 Route::group(['prefix' => 'controle', 'middleware' => 'auth'], function () {
     Route::resource('perfil', 'controle\PerfilController');
     Route::resource('servico', 'controle\ServicoController');
+    Route::resource('venda', 'controle\VendaController');
     Route::resource('solicitacao', 'controle\SolicitacaoController');
     Route::resource('pos-venda', 'controle\PosVendaController');
 });

@@ -2,6 +2,8 @@
 
 @section('content')
 
+    @include('app.partials.menuCategorias')
+
     <div class="col-md-offset-3">
         <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>O que voce precisa que seja feito?</strong></h1>
 
@@ -33,7 +35,7 @@
                         <div class="row col-md-offset-4">
                             <br/>
 
-                            <h3><strong>SERVICOS DESTACADOS</strong></h3>
+                            <h3><strong>&nbsp;SERVICOS DESTACADOS</strong></h3>
 
                             <p>Escolha entre nossos servicos mais populares</p>
                             <br/>

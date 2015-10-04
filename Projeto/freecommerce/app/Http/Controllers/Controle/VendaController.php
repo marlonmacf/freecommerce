@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use FreeCommerce\Http\Requests;
 use FreeCommerce\Http\Controllers\Controller;
 
-class SolicitacaoController extends Controller
+class VendaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class SolicitacaoController extends Controller
      */
     public function index()
     {
-        return view('app.controle.solicitacoes.index.index');
+        return view('app.controle.vendas.index.index');
     }
 
     /**
