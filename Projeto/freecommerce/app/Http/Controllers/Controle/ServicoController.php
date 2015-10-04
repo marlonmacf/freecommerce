@@ -25,7 +25,7 @@ class ServicoController extends Controller
      */
     public function create()
     {
-        //
+        return view('app.controle.servicos.create.index');
     }
 
     /**
