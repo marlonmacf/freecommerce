@@ -6,12 +6,14 @@
 
     <div class="container span9 text-center col-md-6 col-md-offset-3">
         <h1><strong>O que voce precisa que seja feito?</strong></h1>
+
         <h2><strong>Encontre o seu Servico</strong></h2>
         <br/><br/>
+
         <div class="input-group">
             <input type="text" class="form-control" placeholder="O que voce procura?">
-                    <span class="input-group-btn"><button class="btn btn-default" type="button">Encontre Servicos
-                        </button></span>
+            <span class="input-group-btn"><button class="btn btn-default" type="button">Encontre Servicos
+                </button></span>
         </div>
         <br/><br/><br/>
     </div>
@@ -20,10 +22,12 @@
         <div class="panel panel-default">
             <div class="panel-body">
 
-                <div class="row">
+                <div class="row-fluid">
                     <h3><strong>SERVICOS DESTACADOS</strong></h3>
+
                     <p>Escolha entre nossos servicos mais populares</p>
-                    <br /><br />
+                    <br/><br/>
+
                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 
                         <div class="container-fluid">
@@ -223,7 +227,9 @@
                     </div>
                 </div>
 
-                <br /><hr class="featurette-divider"><br />
+                <br/>
+                <hr class="featurette-divider">
+                <br/>
 
             </div>
         </div>

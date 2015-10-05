@@ -4,9 +4,10 @@
 
     @include('app.partials.menuCategorias')
 
-    <div class="col-md-offset-1">
+    <div class="container span9 col-md-11 col-md-offset-1">
         <h1><strong>Resultados de pesquisa para 'teste'</strong></h1>
-        <p><strong>0 resultados</strong></p><br /><br /><br />
+
+        <p><strong>0 resultados</strong></p><br/><br/><br/>
 
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <div class="panel panel-default">
@@ -70,7 +71,7 @@
                     <li><a href="#">Novo</a></li>
                 </ul>
                 <div class="panel-body">
-                    <br />
+                    <br/>
 
                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 
