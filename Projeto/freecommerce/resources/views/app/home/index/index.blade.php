@@ -24,205 +24,207 @@
                     <h3><strong>SERVICOS DESTACADOS</strong></h3>
                     <p>Escolha entre nossos servicos mais populares</p>
                     <br /><br />
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a href="#" class="thumbnail inner-border">
+                                            <span></span>
+                                            <img src="http://placehold.it/300x200" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    Descricao do Servico
+                                </div>
+                                <div class="panel-footer">
+                                    Proprietario
+                                    <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
+                                </div>
+                            </div>
+                        </div>
+                        <br/><br/>
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a href="#" class="thumbnail inner-border">
+                                            <span></span>
+                                            <img src="http://placehold.it/300x200" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    Descricao do Servico
+                                </div>
+                                <div class="panel-footer">
+                                    Proprietario
+                                    <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
+                                </div>
+                            </div>
+                        </div>
+                        <br/><br/>
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a href="#" class="thumbnail inner-border">
+                                            <span></span>
+                                            <img src="http://placehold.it/300x200" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    Descricao do Servico
+                                </div>
+                                <div class="panel-footer">
+                                    Proprietario
+                                    <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a href="#" class="thumbnail inner-border">
+                                            <span></span>
+                                            <img src="http://placehold.it/300x200" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    Descricao do Servico
+                                </div>
+                                <div class="panel-footer">
+                                    Proprietario
+                                    <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
+                                </div>
+                            </div>
+                        </div>
+                        <br/><br/>
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a href="#" class="thumbnail inner-border">
+                                            <span></span>
+                                            <img src="http://placehold.it/300x200" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    Descricao do Servico
+                                </div>
+                                <div class="panel-footer">
+                                    Proprietario
+                                    <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
+                                </div>
+                            </div>
+                        </div>
+                        <br/><br/>
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a href="#" class="thumbnail inner-border">
+                                            <span></span>
+                                            <img src="http://placehold.it/300x200" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    Descricao do Servico
+                                </div>
+                                <div class="panel-footer">
+                                    Proprietario
+                                    <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a href="#" class="thumbnail inner-border">
+                                            <span></span>
+                                            <img src="http://placehold.it/300x200" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    Descricao do Servico
+                                </div>
+                                <div class="panel-footer">
+                                    Proprietario
+                                    <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
+                                </div>
+                            </div>
+                        </div>
+                        <br/><br/>
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a href="#" class="thumbnail inner-border">
+                                            <span></span>
+                                            <img src="http://placehold.it/300x200" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    Descricao do Servico
+                                </div>
+                                <div class="panel-footer">
+                                    Proprietario
+                                    <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
+                                </div>
+                            </div>
+                        </div>
+                        <br/><br/>
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a href="#" class="thumbnail inner-border">
+                                            <span></span>
+                                            <img src="http://placehold.it/300x200" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    Descricao do Servico
+                                </div>
+                                <div class="panel-footer">
+                                    Proprietario
+                                    <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <br /><hr class="featurette-divider"><br />
 
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <a href="#" class="thumbnail inner-border">
-                                        <span></span>
-                                        <img src="http://placehold.it/300x200" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                Descricao do Servico
-                            </div>
-                            <div class="panel-footer">
-                                Proprietario
-                                <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
-                            </div>
-                        </div>
-                    </div>
-                    <br/><br/>
-
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <a href="#" class="thumbnail inner-border">
-                                        <span></span>
-                                        <img src="http://placehold.it/300x200" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                Descricao do Servico
-                            </div>
-                            <div class="panel-footer">
-                                Proprietario
-                                <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
-                            </div>
-                        </div>
-                    </div>
-                    <br/><br/>
-
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <a href="#" class="thumbnail inner-border">
-                                        <span></span>
-                                        <img src="http://placehold.it/300x200" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                Descricao do Servico
-                            </div>
-                            <div class="panel-footer">
-                                Proprietario
-                                <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <a href="#" class="thumbnail inner-border">
-                                        <span></span>
-                                        <img src="http://placehold.it/300x200" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                Descricao do Servico
-                            </div>
-                            <div class="panel-footer">
-                                Proprietario
-                                <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
-                            </div>
-                        </div>
-                    </div>
-                    <br/><br/>
-
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <a href="#" class="thumbnail inner-border">
-                                        <span></span>
-                                        <img src="http://placehold.it/300x200" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                Descricao do Servico
-                            </div>
-                            <div class="panel-footer">
-                                Proprietario
-                                <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
-                            </div>
-                        </div>
-                    </div>
-                    <br/><br/>
-
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <a href="#" class="thumbnail inner-border">
-                                        <span></span>
-                                        <img src="http://placehold.it/300x200" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                Descricao do Servico
-                            </div>
-                            <div class="panel-footer">
-                                Proprietario
-                                <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <a href="#" class="thumbnail inner-border">
-                                        <span></span>
-                                        <img src="http://placehold.it/300x200" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                Descricao do Servico
-                            </div>
-                            <div class="panel-footer">
-                                Proprietario
-                                <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
-                            </div>
-                        </div>
-                    </div>
-                    <br/><br/>
-
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <a href="#" class="thumbnail inner-border">
-                                        <span></span>
-                                        <img src="http://placehold.it/300x200" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                Descricao do Servico
-                            </div>
-                            <div class="panel-footer">
-                                Proprietario
-                                <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
-                            </div>
-                        </div>
-                    </div>
-                    <br/><br/>
-
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <a href="#" class="thumbnail inner-border">
-                                        <span></span>
-                                        <img src="http://placehold.it/300x200" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                Descricao do Servico
-                            </div>
-                            <div class="panel-footer">
-                                Proprietario
-                                <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
             </div>
         </div>
     </div>
