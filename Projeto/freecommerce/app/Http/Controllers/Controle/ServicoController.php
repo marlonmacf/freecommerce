@@ -47,4 +47,9 @@ class ServicoController extends Controller
     {
         return view('app.busca.index.index');
     }
+
+    public function buscaServico($id)
+    {
+        return view('app.busca.servico.index.index');
+    }
 }

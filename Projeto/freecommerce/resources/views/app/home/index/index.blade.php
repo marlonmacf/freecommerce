@@ -37,7 +37,7 @@
                                         <div class="panel panel-default">
 
                                             <div class="panel-heading">
-                                                <a href=""><img src="{{"http://lorempixel.com/640/480/?" . $i }}" class="img-responsive"></a>
+                                                <a href="{{ route('busca.servicos.servico', $servico->id) }}"><img src="{{"http://lorempixel.com/640/480/?" . $i }}" class="img-responsive"></a>
                                                 {{--<img src="{{ url('no-img.jpg') }}" alt="300" width="200" />--}}
                                             </div>
 
