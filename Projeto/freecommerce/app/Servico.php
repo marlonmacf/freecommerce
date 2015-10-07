@@ -13,7 +13,8 @@ class Servico extends Model
         'idCompetencia',
         'titulo',
         'descricao',
-        'duracao'
+        'duracao',
+        'avaliacao'
     ];
 
     protected $hidden = [

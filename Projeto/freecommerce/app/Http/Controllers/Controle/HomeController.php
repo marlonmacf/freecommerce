@@ -5,17 +5,22 @@ namespace FreeCommerce\Http\Controllers\Controle;
 use Illuminate\Http\Request;
 use FreeCommerce\Http\Requests;
 use FreeCommerce\Http\Controllers\Controller;
+use DB;
 
-class ServicoController extends Controller
+class HomeController extends Controller
 {
     public function index()
     {
-        return view('app.controle.servicos.index.index');
+        $servicos = DB::table('servicos')->orderBy('avaliacao', 'desc')->paginate(6);
+
+        //dd($servicos);
+
+        return view('app.home.index.index')->with('servicos', $servicos);
     }
 
     public function create()
     {
-        return view('app.controle.servicos.create.index');
+        //
     }
 
     public function store(Request $request)
@@ -41,10 +46,5 @@ class ServicoController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function busca()//$id
-    {
-        return view('app.busca.index.index');
     }
 }

@@ -10,6 +10,7 @@ class Imagem extends Model
 
     protected $fillable = [
         'idServico',
+        'nome',
         'extensao'
     ];
 

@@ -42,7 +42,8 @@ $factory->define(FreeCommerce\Servico::class, function (Faker\Generator $faker) 
         'idCompetencia' => $faker->numberBetween(1, 117),
         'titulo' => $faker->word,
         'descricao' => $faker->text,
-        //'duracao' => $faker->text,
+        'duracao' => $faker->numberBetween(1, 200),
+        'avaliacao' => $faker->numberBetween(1, 99),
     ];
 });
 
@@ -53,6 +54,14 @@ $factory->define(FreeCommerce\Comentario::class, function (Faker\Generator $fake
         //'idComentario' => $faker->optional($weight = 0.1)->numberBetween(1, 100),
         'descricao' => $faker->text,
         'avaliacao' => $faker->numberBetween(0, 5),
+    ];
+});
+
+$factory->define(FreeCommerce\Imagem::class, function (Faker\Generator $faker) {
+    return [
+        'nome' => $faker->imageUrl($width = 300, $height = 200),
+        'extensao' => "png",
+        'idServico' => $faker->numberBetween(1, 100),
     ];
 });
 
