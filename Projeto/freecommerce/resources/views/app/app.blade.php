@@ -22,7 +22,7 @@
 
 <nav class="navbar navbar">
 
-    <br />
+    <br/>
 
     <div class="container">
 
