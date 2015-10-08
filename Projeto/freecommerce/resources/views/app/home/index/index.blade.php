@@ -28,16 +28,16 @@
                     <p>Escolha entre nossos servicos mais populares</p>
                     <br/><br/>
 
-                    @if(isset($servicos) && !empty($servicos))
+                    @if(isset($instances['servicos']) && !empty($instances['servicos']))
                         <div class="row">
-                            @foreach($servicos as $i => $servico)
+                            @foreach($instances['servicos'] as $i => $servico)
                                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-left">
 
                                     <div class="container-fluid">
                                         <div class="panel panel-default">
 
                                             <div class="panel-heading">
-                                                <a href="{{ route('busca.servicos.servico', $servico->id) }}"><img src="{{"http://lorempixel.com/640/480/?" . $i }}" class="img-responsive"></a>
+                                                <a href="{{ route('busca.servico', $servico->id) }}"><img src="{{"http://lorempixel.com/640/480/?" . $i }}" class="img-responsive"></a>
                                                 {{--<img src="{{ url('no-img.jpg') }}" alt="300" width="200" />--}}
                                             </div>
 
@@ -94,7 +94,7 @@
                         </div>
                         <br/><br/>
                     @endif
-                    {!! $servicos->render() !!}
+                    {!! $instances['servicos']->render() !!}
                 </div>
 
             </div>

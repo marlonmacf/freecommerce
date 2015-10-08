@@ -12,10 +12,18 @@ class HomeController extends Controller
     public function index()
     {
         $servicos = DB::table('servicos')->orderBy('avaliacao', 'desc')->paginate(6);
+        $data['servicos'] = $servicos;
 
-        //dd($servicos);
+        //MENU CATEGORIAS
+        $categorias = DB::table('categorias')->get();
+        $data['categorias'] = $categorias;
+        foreach($categorias as $i => $categoria){
+            $data['competencias'][$categoria->id] = DB::table('competencias')->where('idCategoria', $categoria->id)->get();;
+        }
 
-        return view('app.home.index.index')->with('servicos', $servicos);
+        //dd($data);
+
+        return view('app.home.index.index')->with('instances', $data);
     }
 
     public function create()

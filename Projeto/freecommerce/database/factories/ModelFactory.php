@@ -38,7 +38,7 @@ $factory->define(FreeCommerce\User::class, function (Faker\Generator $faker) {
 
 $factory->define(FreeCommerce\Servico::class, function (Faker\Generator $faker) {
     return [
-        'idUser' => $faker->numberBetween(1, 11),
+        'idUser' => $faker->numberBetween(1, 100),
         'idCompetencia' => $faker->numberBetween(1, 117),
         'titulo' => $faker->word,
         'descricao' => $faker->text,
@@ -50,7 +50,7 @@ $factory->define(FreeCommerce\Servico::class, function (Faker\Generator $faker) 
 $factory->define(FreeCommerce\Comentario::class, function (Faker\Generator $faker) {
     return [
         'idServico' => $faker->numberBetween(1, 100),
-        'idUser' => $faker->numberBetween(1, 11),
+        'idUser' => $faker->numberBetween(1, 100),
         //'idComentario' => $faker->optional($weight = 0.1)->numberBetween(1, 100),
         'descricao' => $faker->text,
         'avaliacao' => $faker->numberBetween(0, 5),
@@ -88,7 +88,7 @@ $factory->define(FreeCommerce\Extra::class, function (Faker\Generator $faker) {
 
 $factory->define(FreeCommerce\Solicitacao::class, function (Faker\Generator $faker) {
     return [
-        'idUser' => $faker->numberBetween(1, 11),
+        'idUser' => $faker->numberBetween(1, 100),
         'idServico' => $faker->numberBetween(1, 100),
     ];
 });
@@ -96,6 +96,6 @@ $factory->define(FreeCommerce\Solicitacao::class, function (Faker\Generator $fak
 $factory->define(FreeCommerce\Solicitacao_has_Extra::class, function (Faker\Generator $faker) {
     return [
         'idSolicitacao' => $faker->numberBetween(1, 50),
-        'idExtra' => $faker->numberBetween(1, 50),
+        'idExtra' => $faker->numberBetween(1, 100),
     ];
 });

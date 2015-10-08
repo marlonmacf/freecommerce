@@ -13,6 +13,6 @@ class ExtrasSeeder extends Seeder
     {
         DB::table('extras')->delete();
 
-        factory('FreeCommerce\Extra', 50)->create();
+        factory('FreeCommerce\Extra', 300)->create();
     }
 }

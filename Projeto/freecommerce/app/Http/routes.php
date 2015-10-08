@@ -24,8 +24,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'where' => ['id' => '
 });
 
 Route::group(['prefix' => 'busca'], function () {
-    Route::get('servicos', ['as' => 'busca.servicos', 'uses' => 'Controle\ServicoController@busca']);
-    Route::get('servicos/{servico}', ['as' => 'busca.servicos.servico', 'uses' => 'Controle\ServicoController@buscaServico']);
+    Route::get('servico/{servico}', ['as' => 'busca.servico', 'uses' => 'Controle\ServicoController@buscaServico']);
+    Route::get('servicos/competencia/{competencia}', ['as' => 'busca.servicos.competencias', 'uses' => 'Controle\ServicoController@buscaServicosCompetencia']);
+    Route::get('servicos/{tag}', ['as' => 'busca.servicos.tags', 'uses' => 'Controle\ServicoController@buscaServicosTag']);
 });
 
 Route::group(['prefix' => 'controle', 'middleware' => 'auth'], function () {

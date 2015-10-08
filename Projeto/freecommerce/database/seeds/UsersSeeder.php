@@ -21,6 +21,6 @@ class UsersSeeder extends Seeder
             //'remember_token' => Hash::make(123456),
         ]);
 
-        factory('FreeCommerce\User', 10)->create();
+        factory('FreeCommerce\User', 99)->create();
     }
 }
