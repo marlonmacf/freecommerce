@@ -13,6 +13,6 @@ class ComentariosSeeder extends Seeder
     {
         DB::table('comentarios')->delete();
 
-        factory('FreeCommerce\Comentario', 1000)->create();
+        factory('FreeCommerce\Comentario', 10000)->create();
     }
 }

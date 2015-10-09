@@ -5,59 +5,51 @@
     @include('app.partials.menuCategorias')
 
     <div class="container span9 col-md-11 col-md-offset-1">
-        <h1><strong>Resultados de pesquisa para 'teste'</strong></h1>
 
-        <p><strong>0 resultados</strong></p><br/><br/><br/>
+        {{-- Titulo --}}
+        @if(isset($instances['competencia']))
+            <h1><strong>Resultados de pesquisa para '{{ $instances['competencia'] }}'</strong></h1>
+        @else
+            <h1><strong>Competencia nao encontrada</strong></h1>
+        @endif
 
+        @if(isset($instances['servicos']))
+            <p><strong>{{ count($instances['servicos']) }} resultados</strong></p><br/><br/><br/>
+        @else
+            <p><strong>0 resultados</strong></p><br/><br/><br/>
+        @endif
+
+        {{-- Filtros --}}
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Categorias
+                    <h4 class="panel-title"> Categorias </h4>
                 </div>
-                <div class="panel-body">
-                    <ul class="nav nav">
-                        <li class="active">
-                            <a href="#"><strong>Todas as Categorias</strong></a>
-                        </li>
-                        <li><a href="#">Categoria</a></li>
-                        <li><a href="#">Categoria</a></li>
-                        <li><a href="#">Categoria</a></li>
-                        <li><a href="#">Categoria</a></li>
-                        <li><a href="#">Categoria</a></li>
-                        <li><a href="#">Categoria</a></li>
-                    </ul>
-                </div>
-                <div class="panel-body">
-                    <ul class="nav nav">
-                        <li class="active">
-                            <a href="#"><strong>Tempo de Entrega</strong></a>
-                        </li>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                Ate 24 horas
-                            </label>
+                <ul class="nav nav">
+                    <li class="active">
+                        <a href="{{ route('busca.servicos.competencias.tags', "&".$instances['tag']) }}"><strong>Todas
+                                as Categorias</strong></a>
+                    </li>
+                </ul>
+
+                @if(isset($instances['categorias']))
+                    @foreach($instances['categorias'] as $i => $categoria)
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#{{ $categoria->id }}">{{ $categoria->nome }}</a>
+                            </h4>
                         </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                                Ate 3 dias
-                            </label>
+                        <div id="{{ $categoria->id }}" class="panel-collapse collapse">
+                            <ul class="nav nav">
+                                @foreach($instances['competencias'][$i+1] as $competencia)
+                                    <li class="active">
+                                        <a href="{{ route('busca.servicos.competencias.tags', $competencia->id."&".$instances['tag']) }}"><strong>{{ $competencia->nome }}</strong></a>
+                                    </li>
+                                @endforeach
+                            </ul>
                         </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
-                                Ate 7 dias
-                            </label>
-                        </div>
-                        <div class="radio disabled">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
-                                Qualquer
-                            </label>
-                        </div>
-                    </ul>
-                </div>
+                    @endforeach
+                @endif
             </div>
         </div>
 
@@ -65,212 +57,88 @@
             <div class="panel panel-default">
                 <ul class="nav nav-tabs">
                     <li class="active">
-                        <a href="#">Mais Populares</a>
+                        <a href="#">Todos</a>
                     </li>
                     <li><a href="#">Recomendado</a></li>
                     <li><a href="#">Novo</a></li>
                 </ul>
                 <div class="panel-body">
                     <br/>
+                    @if(isset($instances['servicos']) && !empty($instances['servicos']))
+                        <div class="row">
+                            @foreach($instances['servicos'] as $i => $servico)
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-left">
 
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <div class="container-fluid">
+                                        <div class="panel panel-default">
 
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <a href="#" class="thumbnail inner-border">
-                                            <span></span>
-                                            <img src="http://placehold.it/300x200" alt="">
-                                        </a>
+                                            <div class="panel-heading">
+                                                <a href="{{ route('busca.servico', $servico->id) }}"><img
+                                                            src="{{"http://lorempixel.com/640/480/?" . $i }}"
+                                                            class="img-responsive"></a>
+                                                {{--<img src="{{ url('no-img.jpg') }}" alt="300" width="200" />--}}
+                                            </div>
+
+                                            <div class="panel-body">
+                                                @if(!empty($servico->descricao))
+                                                    <p>
+                                                        <small>
+                                                            {{substr($servico->descricao, 0, 60) . "..."}}
+                                                        </small>
+                                                    </p>
+                                                @else
+                                                    <p>
+                                                        <small>Descricao</small>
+                                                    </p>
+                                                @endif
+                                            </div>
+
+                                            <div class="panel-footer">
+                                                <div class="row">
+                                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                        @if(!empty($servico->titulo))
+                                                            <p><strong>{{$servico->titulo}}</strong></p>
+                                                        @else
+                                                            <p><strong>Servico</strong></p>
+                                                        @endif
+                                                    </div>
+                                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                        @if(!empty($servico->duracao))
+                                                            <p class="pull-right"><i
+                                                                        class="glyphicon glyphicon-usd">{{$servico->duracao}}</i>
+                                                            </p>
+                                                        @else
+                                                            <p class="pull-right"><i
+                                                                        class="glyphicon glyphicon-usd">0</i>
+                                                            </p>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     </div>
+                                    <br/><br/>
+
                                 </div>
-                                <div class="panel-body">
-                                    Descricao do Servico
-                                </div>
-                                <div class="panel-footer">
-                                    Proprietario
-                                    <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
-                                </div>
+                            @endforeach
+                        </div>
+                    @else
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                            <div class="container-fluid">
+                                <br/><br/>
+
+                                <p>Nenhum servico encontrado...</p>
+                                <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                                <br/><br/><br/><br/><br/><br/><br/><br/><br/>
                             </div>
                         </div>
                         <br/><br/>
-
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <a href="#" class="thumbnail inner-border">
-                                            <span></span>
-                                            <img src="http://placehold.it/300x200" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="panel-body">
-                                    Descricao do Servico
-                                </div>
-                                <div class="panel-footer">
-                                    Proprietario
-                                    <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
-                                </div>
-                            </div>
-                        </div>
-                        <br/><br/>
-
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <a href="#" class="thumbnail inner-border">
-                                            <span></span>
-                                            <img src="http://placehold.it/300x200" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="panel-body">
-                                    Descricao do Servico
-                                </div>
-                                <div class="panel-footer">
-                                    Proprietario
-                                    <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <a href="#" class="thumbnail inner-border">
-                                            <span></span>
-                                            <img src="http://placehold.it/300x200" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="panel-body">
-                                    Descricao do Servico
-                                </div>
-                                <div class="panel-footer">
-                                    Proprietario
-                                    <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
-                                </div>
-                            </div>
-                        </div>
-                        <br/><br/>
-
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <a href="#" class="thumbnail inner-border">
-                                            <span></span>
-                                            <img src="http://placehold.it/300x200" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="panel-body">
-                                    Descricao do Servico
-                                </div>
-                                <div class="panel-footer">
-                                    Proprietario
-                                    <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
-                                </div>
-                            </div>
-                        </div>
-                        <br/><br/>
-
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <a href="#" class="thumbnail inner-border">
-                                            <span></span>
-                                            <img src="http://placehold.it/300x200" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="panel-body">
-                                    Descricao do Servico
-                                </div>
-                                <div class="panel-footer">
-                                    Proprietario
-                                    <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <a href="#" class="thumbnail inner-border">
-                                            <span></span>
-                                            <img src="http://placehold.it/300x200" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="panel-body">
-                                    Descricao do Servico
-                                </div>
-                                <div class="panel-footer">
-                                    Proprietario
-                                    <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
-                                </div>
-                            </div>
-                        </div>
-                        <br/><br/>
-
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <a href="#" class="thumbnail inner-border">
-                                            <span></span>
-                                            <img src="http://placehold.it/300x200" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="panel-body">
-                                    Descricao do Servico
-                                </div>
-                                <div class="panel-footer">
-                                    Proprietario
-                                    <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
-                                </div>
-                            </div>
-                        </div>
-                        <br/><br/>
-
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <a href="#" class="thumbnail inner-border">
-                                            <span></span>
-                                            <img src="http://placehold.it/300x200" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="panel-body">
-                                    Descricao do Servico
-                                </div>
-                                <div class="panel-footer">
-                                    Proprietario
-                                    <p class="pull-right"><i class="glyphicon glyphicon-usd">5</i></p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
+                    @endif
+                    @if(isset($instances['paginate']))
+                        {!! $instances['servicos']->render() !!}
+                    @endif
                 </div>
             </div>
         </div>

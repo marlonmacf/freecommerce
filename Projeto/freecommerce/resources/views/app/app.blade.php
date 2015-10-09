@@ -29,9 +29,15 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="{{ url('/') }}"><strong> FreeCommerce </strong></a>
             <ul class="nav navbar-form pull-left">
-                <li><input type="text" class="form-control" placeholder="Encontre Servicos">
-                    <button type="submit" class="btn-link"><i class="glyphicon glyphicon-search"></i></button>
-                </li>
+                {!! Form::open(array('route' => 'busca.servicos.tags', 'method' =>'get' ,'class' => 'form-horizontal ajax', 'id' => 'busca')) !!}
+                <div class="input-group">
+                    <li>
+                        {!! Form::input('text', "tag", null, ['class' => 'form-control', 'id' => 'tag', 'placeholder' => "Encontre Servicos"]) !!}
+                        <button type="submit" class="btn-link" id="btnBuscar"><i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </li>
+                </div>
+                {!! Form::close() !!}
             </ul>
         </div>
 

@@ -13,6 +13,6 @@ class Servicos_has_TagsSeeder extends Seeder
     {
         DB::table('servicos_has_tags')->delete();
 
-        factory('FreeCommerce\Servico_has_tag', 500)->create();
+        factory('FreeCommerce\Servico_has_tag', 5000)->create();
     }
 }

@@ -49,7 +49,7 @@ $factory->define(FreeCommerce\Servico::class, function (Faker\Generator $faker) 
 
 $factory->define(FreeCommerce\Comentario::class, function (Faker\Generator $faker) {
     return [
-        'idServico' => $faker->numberBetween(1, 100),
+        'idServico' => $faker->numberBetween(1, 1000),
         'idUser' => $faker->numberBetween(1, 100),
         //'idComentario' => $faker->optional($weight = 0.1)->numberBetween(1, 100),
         'descricao' => $faker->text,
@@ -61,7 +61,7 @@ $factory->define(FreeCommerce\Imagem::class, function (Faker\Generator $faker) {
     return [
         'nome' => $faker->imageUrl($width = 300, $height = 200),
         'extensao' => "png",
-        'idServico' => $faker->numberBetween(1, 100),
+        'idServico' => $faker->numberBetween(1, 1000),
     ];
 });
 
@@ -73,14 +73,14 @@ $factory->define(FreeCommerce\Tag::class, function (Faker\Generator $faker) {
 
 $factory->define(FreeCommerce\Servico_has_tag::class, function (Faker\Generator $faker) {
     return [
-        'idServico' => $faker->numberBetween(1, 100),
+        'idServico' => $faker->numberBetween(1, 1000),
         'idTag' => $faker->numberBetween(1, 100),
     ];
 });
 
 $factory->define(FreeCommerce\Extra::class, function (Faker\Generator $faker) {
     return [
-        'idServico' => $faker->numberBetween(1, 100),
+        'idServico' => $faker->numberBetween(1, 1000),
         'descricao' => $faker->text,
         'valor' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL),
     ];
@@ -89,7 +89,7 @@ $factory->define(FreeCommerce\Extra::class, function (Faker\Generator $faker) {
 $factory->define(FreeCommerce\Solicitacao::class, function (Faker\Generator $faker) {
     return [
         'idUser' => $faker->numberBetween(1, 100),
-        'idServico' => $faker->numberBetween(1, 100),
+        'idServico' => $faker->numberBetween(1, 1000),
     ];
 });
 

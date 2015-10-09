@@ -10,11 +10,14 @@
         <h2><strong>Encontre o seu Servico</strong></h2>
         <br/><br/>
 
+        {!! Form::open(array('route' => 'busca.servicos.tags', 'method' =>'get' ,'class' => 'form-horizontal ajax', 'id' => 'busca')) !!}
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="O que voce procura?">
-            <span class="input-group-btn"><button class="btn btn-default" type="button">Encontre Servicos
-                </button></span>
+            {!! Form::input('text', "tag", null, ['class' => 'form-control', 'id' => 'tag', 'placeholder' => "O que voce procura?"]) !!}
+            <span class="input-group-btn">
+                {!! Form::submit('Encontre Servicos',['class' => 'btn btn-default', 'id' => 'btnBuscar']) !!}
+            </span>
         </div>
+        {!! Form::close() !!}
         <br/><br/><br/>
     </div>
 
@@ -37,7 +40,9 @@
                                         <div class="panel panel-default">
 
                                             <div class="panel-heading">
-                                                <a href="{{ route('busca.servico', $servico->id) }}"><img src="{{"http://lorempixel.com/640/480/?" . $i }}" class="img-responsive"></a>
+                                                <a href="{{ route('busca.servico', $servico->id) }}"><img
+                                                            src="{{"http://lorempixel.com/640/480/?" . $i }}"
+                                                            class="img-responsive"></a>
                                                 {{--<img src="{{ url('no-img.jpg') }}" alt="300" width="200" />--}}
                                             </div>
 
@@ -45,7 +50,7 @@
                                                 @if(!empty($servico->descricao))
                                                     <p>
                                                         <small>
-                                                            {{substr($servico->descricao, 0, 100) . "..."}}
+                                                            {{substr($servico->descricao, 0, 80) . "..."}}
                                                         </small>
                                                     </p>
                                                 @else
