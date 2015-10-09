@@ -22,7 +22,7 @@ class VendaController extends Controller
             }
         }
 
-        dd($vendas);
+        //dd($vendas);
 
         return view('app.controle.vendas.index.index');
     }

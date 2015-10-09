@@ -265,7 +265,7 @@
                     <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
                         {!! Form::button('Comprar Agora',['class' => 'btn btn-success btn-lg btn-block']) !!}
                     </div>
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="row col-xs-3 col-sm-3 col-md-3 col-lg-3">
                         {!! Form::button('<i class="glyphicon glyphicon-shopping-cart"></i>',['class' => 'btn btn-success btn-lg']) !!}
                     </div>
                 </div>
