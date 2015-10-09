@@ -8,7 +8,7 @@
 
         {{-- Titulo --}}
         @if(isset($instances['competencia']))
-            <h1><strong>Resultados de pesquisa para '{{ $instances['competencia'] }}'</strong></h1>
+            <h1><strong>Resultados de pesquisa para {{ $instances['competencia'] }}</strong></h1>
         @else
             <h1><strong>Competencia nao encontrada</strong></h1>
         @endif

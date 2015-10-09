@@ -154,7 +154,7 @@ class BuscaController extends Controller
             $competencia = DB::table('competencias')->where('id', $competencia)->first();
             if ($competencia) {
                 $data['competencia'] = $competencia->nome;
-                $data['servicos'] = DB::table('servicos')->where('idCompetencia', $data['competencia'])->get();
+                $data['servicos'] = DB::table('servicos')->where('idCompetencia', $competencia->id)->get();
             } else {
                 $data['competencia'] = "Todas as Competencias";
                 $data['servicos'] = DB::table('servicos')->paginate(6);

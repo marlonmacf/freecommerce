@@ -19,51 +19,43 @@
                 <th>Acoes</th>
             </tr>
 
-            <tr>
-                <td>Titulo do Servico</td>
-                <td>ATIVO</td>
-                <td>32</td>
-                <td><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i
-                            class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i
-                            class="glyphicon glyphicon-star"></i></td>
-                <td width="300">
-                    <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-edit"></i> Editar </a>
-                    <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-eye-open"></i> Visializar
-                    </a>
-                    <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-trash"></i> Inativar </a>
-                </td>
-            </tr>
-            <tr>
-                <td>Titulo do Servico2</td>
-                <td>ATIVO</td>
-                <td>5</td>
-                <td><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i
-                            class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star-empty"></i><i
-                            class="glyphicon glyphicon-star-empty"></i></td>
-                <td width="300">
-                    <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-edit"></i> Editar </a>
-                    <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-eye-open"></i> Visializar
-                    </a>
-                    <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-trash"></i> Inativar </a>
-                </td>
-            </tr>
-            <tr>
-                <td>Titulo do Servico3</td>
-                <td>INATIVO</td>
-                <td>0</td>
-                <td><i class="glyphicon glyphicon-star-empty"></i><i class="glyphicon glyphicon-star-empty"></i><i
-                            class="glyphicon glyphicon-star-empty"></i><i class="glyphicon glyphicon-star-empty"></i><i
-                            class="glyphicon glyphicon-star-empty"></i></td>
-                <td width="300">
-                    <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-edit"></i> Editar </a>
-                    <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-eye-open"></i> Visializar
-                    </a>
-                    <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-trash"></i> &nbsp;&nbsp;Ativar&nbsp;
-                    </a>
-                </td>
-            </tr>
-
+            @if(isset($instances))
+                @foreach($instances as $servico)
+                    <tr>
+                        @if(isset($servico->titulo))
+                            <td>{{ $servico->titulo }}</td>
+                        @else
+                            <td></td>
+                        @endif
+                        <td>ATIVO</td>
+                        <td> 0 </td>
+                        <td>
+                            @for($cont = 0; $cont < ($servico->avaliacao/20); $cont++)
+                                <i class="glyphicon glyphicon-star"></i>
+                            @endfor
+                            @for($cont; $cont < 5; $cont++)
+                                <i class="glyphicon glyphicon-star-empty"></i>
+                            @endfor
+                        </td>
+                        <td width="300">
+                            <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-edit"></i> Editar
+                            </a>
+                            <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-eye-open"></i>
+                                Visializar
+                            </a>
+                            <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-trash"></i>
+                                Inativar
+                            </a>
+                        </td>
+                    </tr>
+                @endforeach
+            @else
+                <tr>Voce nao possui servicos</tr>
+            @endif
         </table>
+        @if(isset($instances))
+            {!! $instances->render() !!}
+        @endif
     </div>
 
 @endsection

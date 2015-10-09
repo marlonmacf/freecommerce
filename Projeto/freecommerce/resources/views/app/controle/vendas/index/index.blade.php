@@ -11,7 +11,7 @@
             <li class="active">
                 <a href="#">TODAS</a>
             </li>
-            <li><a href="#">TODAS</a></li>
+            <li><a href="#">ATIVAS</a></li>
             <li><a href="#">ENTREGUES</a></li>
             <li><a href="#">COMPLETADAS</a></li>
             <li><a href="#">CANCELADAS</a></li>

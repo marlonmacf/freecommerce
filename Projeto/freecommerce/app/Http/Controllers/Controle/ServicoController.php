@@ -6,12 +6,15 @@ use Illuminate\Http\Request;
 use FreeCommerce\Http\Requests;
 use FreeCommerce\Http\Controllers\Controller;
 use DB;
+use Illuminate\Support\Facades\Auth;
 
 class ServicoController extends Controller
 {
     public function index()
     {
-        return view('app.controle.servicos.index.index');
+        $servicos = DB::table('servicos')->where('idUser', Auth::user()->id)->paginate(10);
+
+        return view('app.controle.servicos.index.index')->with('instances', $servicos);
     }
 
     public function create()
