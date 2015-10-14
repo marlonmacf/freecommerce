@@ -24,44 +24,24 @@
                 <th>Vencimento</th>
                 <th>Total</th>
                 <th>Status</th>
-                <th>Acoes</th>
             </tr>
 
-            <tr>
-                <td>Nome do Comprador</td>
-                <td>Titulo do Servico</td>
-                <td>30/10/2015</td>
-                <td>R$ 30,00</td>
-                <td>ATIVO</td>
-                <td width="300">
-                    <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-eye-open"></i> Detalhes
-                    </a>
-                </td>
-            </tr>
+            @if(isset($instances['vendas']))
+                @foreach($instances['vendas'] as $venda)
+                    <tr>
+                        <td>{{ $venda['comprador'] }}</td>
+                        <td>{{ $venda['titulo'] }}</td>
+                        <td>{{ $venda['vencimento'] }}</td>
+                        <td>{{ $venda['total'] }}</td>
+                        <td>{{ $venda['status'] }}</td>
+                    </tr>
+                @endforeach
+            @else
+                <tr>
+                    <td colspan="5" class="text-center">Nenhuma Venda realizada</td>
+                </tr>
+            @endif
 
-            <tr>
-                <td>Nome do Comprador2</td>
-                <td>Titulo do Servico</td>
-                <td>15/10/2015</td>
-                <td>R$ 23,00</td>
-                <td>ENTREGUE</td>
-                <td width="300">
-                    <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-eye-open"></i> Detalhes
-                    </a>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Nome do Comprador3</td>
-                <td>Titulo do Servico</td>
-                <td>13/10/2015</td>
-                <td>R$ 12,00</td>
-                <td>ENTREGUE</td>
-                <td width="300">
-                    <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-eye-open"></i> Detalhes
-                    </a>
-                </td>
-            </tr>
         </table>
     </div>
 

@@ -25,50 +25,23 @@
                 <th>Vencimento</th>
                 <th>Total</th>
                 <th>Status</th>
-                <th>Acoes</th>
             </tr>
 
-            <tr>
-                <td>Titulo do Servico</td>
-                <td>30/10/2015</td>
-                <td>15,00</td>
-                <td>ATIVA</td>
-                <td width="300">
-                    <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-edit"></i> Editar </a>
-                    <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-eye-open"></i> Visializar
-                    </a>
-                    <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-trash"></i> Cancelar </a>
-                </td>
-            </tr>
+            @if(isset($instances['solicitacoes']))
+                @foreach($instances['solicitacoes'] as $solicitacao)
+                    <tr>
+                        <td>{{ $solicitacao['titulo'] }}</td>
+                        <td>{{ $solicitacao['vencimento'] }}</td>
+                        <td>{{ $solicitacao['total'] }}</td>
+                        <td>{{ $solicitacao['status'] }}</td>
+                    </tr>
+                @endforeach
+            @else
+                <tr>
+                    <td colspan="5" class="text-center">Nenhuma Solicitacao</td>
+                </tr>
+            @endif
 
-            <tr>
-                <td>Titulo do Servico2</td>
-                <td>14/10/2015</td>
-                <td>37,00</td>
-                <td>ENTREGUE</td>
-                <td width="300">
-                    <a href="#" class="btn btn-default btn-sm" disabled><i class="glyphicon glyphicon-edit"></i> Editar
-                    </a>
-                    <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-eye-open"></i> Visializar
-                    </a>
-                    <a href="#" class="btn btn-default btn-sm" disabled><i class="glyphicon glyphicon-trash"></i>
-                        Cancelar </a>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Titulo do Servico3</td>
-                <td>30/10/2015</td>
-                <td>15,00</td>
-                <td>INATIVA</td>
-                <td width="300">
-                    <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-edit"></i> Editar </a>
-                    <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-eye-open"></i> Visializar
-                    </a>
-                    <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-trash"></i> &nbsp;&nbsp;&nbsp;Ativar&nbsp;&nbsp;
-                    </a>
-                </td>
-            </tr>
         </table>
     </div>
 

@@ -28,7 +28,7 @@
                             <td></td>
                         @endif
                         <td>ATIVO</td>
-                        <td> 0 </td>
+                        <td> 0</td>
                         <td>
                             @for($cont = 0; $cont < ($servico->avaliacao/20); $cont++)
                                 <i class="glyphicon glyphicon-star"></i>
@@ -40,17 +40,17 @@
                         <td width="300">
                             <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-edit"></i> Editar
                             </a>
-                            <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-eye-open"></i>
+                            <a href="{{ route('busca.servico', $servico->id) }}" class="btn btn-default btn-sm"><i
+                                        class="glyphicon glyphicon-eye-open"></i>
                                 Visializar
-                            </a>
-                            <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-trash"></i>
-                                Inativar
                             </a>
                         </td>
                     </tr>
                 @endforeach
             @else
-                <tr>Voce nao possui servicos</tr>
+                <tr>
+                    <td
+                </tr>
             @endif
         </table>
         @if(isset($instances))
