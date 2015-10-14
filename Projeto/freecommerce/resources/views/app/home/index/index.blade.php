@@ -3,7 +3,6 @@
 @section('content')
 
     @include('app.partials.menuCategorias')
-    <br/><br/><br/><br/><br/><br/><br/><br/>
 
     <div class="container span9 text-center col-md-6 col-md-offset-3">
         <h1><strong>O que voce precisa que seja feito?</strong></h1>
@@ -27,25 +26,27 @@
             <div class="panel-body">
 
                 <div class="row-fluid">
-                    <h3 class="section-subheading text-muted"><strong>SERVICOS DESTACADOS</strong></h3>
-                    <p class="section-heading">Escolha entre nossos servicos mais populares</p>
+                    <h3><strong>SERVICOS DESTACADOS</strong></h3>
+
+                    <p>Escolha entre nossos servicos mais populares</p>
                     <br/><br/>
 
                     @if(isset($instances['servicos']) && !empty($instances['servicos']))
                         <div class="row">
-
                             @foreach($instances['servicos'] as $i => $servico)
-                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-left portfolio-item"">
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-left">
 
                                     <div class="container-fluid">
                                         <div class="panel panel-default">
 
-                                            <a href="{{ route('busca.servico', $servico->id) }}"><img
-                                                        src="{{"http://lorempixel.com/640/480/?" . $i }}"
-                                                        class="img-responsive"></a>
-                                            {{--<img src="{{ url('no-img.jpg') }}" alt="300" width="200" />--}}
+                                            <div class="panel-heading">
+                                                <a href="{{ route('busca.servico', $servico->id) }}"><img
+                                                            src="{{"http://lorempixel.com/640/480/?" . $i }}"
+                                                            class="img-responsive"></a>
+                                                {{--<img src="{{ url('no-img.jpg') }}" alt="300" width="200" />--}}
+                                            </div>
 
-                                            <div class="panel-body text-muted">
+                                            <div class="panel-body">
                                                 @if(!empty($servico->descricao))
                                                     <p>
                                                         <small>
@@ -59,7 +60,7 @@
                                                 @endif
                                             </div>
 
-                                            <div class="panel-footer text-muted">
+                                            <div class="panel-footer">
                                                 <div class="row">
                                                     <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                                                         @if(!empty($servico->titulo))

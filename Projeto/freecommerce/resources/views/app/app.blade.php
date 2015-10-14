@@ -6,20 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FreeCommerce</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="css/agency.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet"
-          type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css">
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,17 +18,61 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body id="page-top" class="index">
+<body>
+
+<nav class="navbar navbar">
+
+    <br/>
+
+    <div class="container">
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{{ url('/') }}"><strong> FreeCommerce </strong></a>
+            <ul class="nav navbar-form pull-left">
+                {!! Form::open(array('route' => 'busca.servicos.tags', 'method' =>'get' ,'class' => 'form-horizontal ajax', 'id' => 'busca')) !!}
+                <div class="input-group">
+                    <li>
+                        {!! Form::input('text', "tag", null, ['class' => 'form-control', 'id' => 'tag', 'placeholder' => "Encontre Servicos"]) !!}
+                        <button type="submit" class="btn-link" id="btnBuscar"><i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </li>
+                </div>
+                {!! Form::close() !!}
+            </ul>
+        </div>
+
+        <ul class="nav navbar-nav pull-right">
+            @if (Auth::guest())
+                <li><a href="{{ url('/auth/login') }}"> Acesar sua conta </a></li>
+                <li><a href="{{ url('/auth/register') }}"> Criar uma conta </a></li>
+            @else
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                       aria-expanded="false"><i class="glyphicon glyphicon-user"></i> {{ Auth::user()->nome }} <span
+                                class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="{{ route('controle.servico.index') }}"> Meus Servicos </a></li>
+                        <li><a href="{{ route('controle.venda.index') }}"> Minhas Vendas </a></li>
+                        <li><a href="{{ route('controle.solicitacao.index') }}"> Minhas Solicitacoes </a></li>
+                        <li><a href="{{ route('controle.perfil.index') }}"> Meu Perfil </a></li>
+                        <div class="nav-divider"></div>
+                        <li><a href="#"> Ajuda </a></li>
+                        <div class="nav-divider"></div>
+                        <li><a href="{{ url('/auth/logout') }}"> Sair </a></li>
+                    </ul>
+                </li>
+            @endif
+        </ul>
+
+    </div>
+
+</nav>
 
 @yield('content')
 
 <br/>
 <br/>
 <br/>
-
-<!-- Portfolio Modals -->
-<!-- Use the modals below to showcase details about your portfolio projects! -->
-<!-- Portfolio Modal 1 -->
 
 <!-- Scripts -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

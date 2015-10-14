@@ -3,7 +3,6 @@
 @section('content')
 
     @include('app.partials.menuCategorias')
-    <br/><br/><br/><br/><br/><br/><br/><br/>
 
     <div class="container-fluid">
 
@@ -64,5 +63,7 @@
                 </div>
             </div>
         </div>
+
     </div>
+
 @endsection
