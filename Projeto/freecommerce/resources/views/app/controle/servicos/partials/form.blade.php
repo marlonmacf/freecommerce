@@ -66,51 +66,11 @@
 <div class="col-md-8 col-md-offset-2">
     <div class="form-group">
         <h3><strong>Extras</strong></h3>
-        {!! Form::button('<i class="fa fa-trash-o"></i> '.'Novo Extra',['class' => 'btn btn-default', 'id' => 'btnApagar']) !!}
+        {!! Form::button('<i class="fa fa-trash-o"></i> '.'Novo Extra',['class' => 'btn btn-default', 'id' => 'btnApagar', 'onclick' => 'addForm']) !!}
     </div>
 </div>
 
-<div class="col-md-4 col-md-offset-2">
-    <div class="form-group">
-        {!! Form::label('descricaoExtra', 'Descricao:') !!}
-        {!! Form::text('descricaoExtra', null, ['class'=>'form-control']) !!}
-    </div>
-</div>
-
-<div class="col-md-3 col-md-offset-1">
-    <div class="form-group">
-        {!! Form::label('valorExtra', 'Valor:') !!}
-        {!! Form::text('valorExtra', null, ['class'=>'form-control']) !!}
-    </div>
-</div>
-
-<div class="col-md-4 col-md-offset-2">
-    <div class="form-group">
-        {!! Form::label('descricaoExtra', 'Descricao:') !!}
-        {!! Form::text('descricaoExtra', null, ['class'=>'form-control']) !!}
-    </div>
-</div>
-
-<div class="col-md-3 col-md-offset-1">
-    <div class="form-group">
-        {!! Form::label('valorExtra', 'Valor:') !!}
-        {!! Form::text('valorExtra', null, ['class'=>'form-control']) !!}
-    </div>
-</div>
-
-<div class="col-md-4 col-md-offset-2">
-    <div class="form-group">
-        {!! Form::label('descricaoExtra', 'Descricao:') !!}
-        {!! Form::text('descricaoExtra', null, ['class'=>'form-control']) !!}
-    </div>
-</div>
-
-<div class="col-md-3 col-md-offset-1">
-    <div class="form-group">
-        {!! Form::label('valorExtra', 'Valor:') !!}
-        {!! Form::text('valorExtra', null, ['class'=>'form-control']) !!}
-    </div>
-</div>
+<div class="extras"></div>
 
 <div class="col-md-8 col-md-offset-2">
     <div class="form-group">
@@ -118,3 +78,9 @@
         {!! Form::submit('Salvar Servico', ['class'=>'btn btn-primary form-control']) !!}
     </div>
 </div>
+
+<script type="text/javascript">
+    function addForm() {
+        alert('sadfas');
+    }
+</script>
