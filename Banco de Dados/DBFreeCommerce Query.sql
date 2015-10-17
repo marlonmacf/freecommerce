@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS `DBFreeCommerce`.`Perfis` (
   `email` VARCHAR(100) NOT NULL,
   `senha` VARCHAR(100) NOT NULL,
   `descricao` VARCHAR(200) NULL,
+  `foto` VARCHAR(50) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -63,7 +64,9 @@ CREATE TABLE IF NOT EXISTS `DBFreeCommerce`.`Servicos` (
   `idCompetencia` INT NOT NULL,
   `titulo` VARCHAR(100) NOT NULL,
   `descricao` VARCHAR(200) NOT NULL,
-  `duracao` VARCHAR(50) NULL,
+  `duracao` INT NULL,
+  `avaliacao` INT NULL,
+  `status` INT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_Servico_Perfil1_idx` (`idPerfil` ASC),
   INDEX `fk_Servicos_Competencias1_idx` (`idCompetencia` ASC),
@@ -87,7 +90,6 @@ CREATE TABLE IF NOT EXISTS `DBFreeCommerce`.`Extras` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
   `idServico` BIGINT NOT NULL,
   `descricao` VARCHAR(100) NOT NULL,
-  `valor` DOUBLE NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_Extra_Servico1_idx` (`idServico` ASC),
   CONSTRAINT `fk_Extra_Servico1`
@@ -105,6 +107,8 @@ CREATE TABLE IF NOT EXISTS `DBFreeCommerce`.`Solicitacoes` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
   `idPerfil` BIGINT NOT NULL,
   `idServico` BIGINT NOT NULL,
+  `valor` DECIMAL(10,2) NOT NULL,
+  `descricao` VARCHAR(200) NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_Perfil_has_Servico_Servico1_idx` (`idServico` ASC),
   INDEX `fk_Perfil_has_Servico_Perfil1_idx` (`idPerfil` ASC),
@@ -150,6 +154,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `DBFreeCommerce`.`Imagens` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
   `idServico` BIGINT NOT NULL,
+  `nome` VARCHAR(50) NOT NULL,
   `extensao` VARCHAR(5) NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_Imagens_Servicos1_idx` (`idServico` ASC),
