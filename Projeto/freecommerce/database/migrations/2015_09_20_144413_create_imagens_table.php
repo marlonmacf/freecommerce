@@ -15,7 +15,7 @@ class CreateImagensTable extends Migration
         Schema::create('imagens', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('idServico')->unsigned();
-            $table->string('nome', 100);
+            $table->string('nome', 50);
             $table->string('extensao', 5);
 
             $table->foreign('idServico')->references('id')->on('servicos');

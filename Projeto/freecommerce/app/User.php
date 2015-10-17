@@ -21,10 +21,11 @@ class User extends Model implements
 
     protected $fillable = [
         'nome',
-        'descricao',
         'email',
         'password',
         'remember_token',
+        'descricao',
+        'foto'
     ];
 
     protected $hidden = [

@@ -18,7 +18,7 @@ class CreateComentariosTable extends Migration
             $table->bigInteger('idUser')->unsigned();
             $table->bigInteger('idComentario')->unsigned()->nullable();
             $table->string('descricao', 200);
-            $table->integer('avaliacao');
+            $table->integer('avaliacao')->nullable();
 
             $table->foreign('idServico')->references('id')->on('servicos');
             $table->foreign('idUser')->references('id')->on('users');

@@ -2,6 +2,7 @@
 
 namespace FreeCommerce\Http\Controllers\Controle;
 
+use FreeCommerce\Servico;
 use Illuminate\Http\Request;
 use FreeCommerce\Http\Requests;
 use FreeCommerce\Http\Controllers\Controller;
@@ -9,9 +10,16 @@ use DB;
 
 class HomeController extends Controller
 {
+    private $servicoModel;
+
+    public function __construct(Servico $servicoModel)
+    {
+        $this->servicoModel = $servicoModel;
+    }
+
     public function index()
     {
-        $servicos = DB::table('servicos')->orderBy('avaliacao', 'desc')->paginate(6);
+        $servicos = $this->servicoModel->with('Imagens')->paginate(6);
         $data['servicos'] = $servicos;
 
         //MENU CATEGORIAS

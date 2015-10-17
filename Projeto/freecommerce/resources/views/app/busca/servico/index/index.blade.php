@@ -14,7 +14,7 @@
         </ul>
     </div>
 
-    {{-- Direita --}}
+    {{-- Esquerda --}}
     <div class="container span6 col-md-5 col-md-offset-2">
 
         {{-- Galeria --}}
@@ -23,8 +23,8 @@
 
                 {{-- Titulo --}}
                 <div class="panel-heading">
-                    @if(isset($instances['titulo']))
-                        <h4>Eu vou {{ $instances['titulo'] }} por $5</h4>
+                    @if(isset($instances['servico']['titulo']) && isset( $instances['servico']['valor']))
+                        <h4>Eu vou {{ $instances['servico']['titulo'] }} por ${{ $instances['servico']['valor'] }}</h4>
                     @else
                         <h4>Eu vou fazer alguma coisa por $5</h4>
                     @endif
@@ -42,8 +42,8 @@
                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-right">
                         <small>
                             <i class="glyphicon glyphicon-time"></i>
-                            @if(isset($instances['duracao']))
-                                {{ $instances['duracao']  }} Dias em media
+                            @if(isset($instances['servico']['duracao']))
+                                {{ $instances['servico']['duracao'] }} Dias em media
                             @else
                                 0 Dias em media
                             @endif
@@ -54,30 +54,32 @@
                     {{-- Galeria --}}
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                            <li data-target="#myCarousel" data-slide-to="3"></li>
-                        </ol>
 
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <img src="http://lorempixel.com/640/480/?1" alt="Chania">
-                            </div>
-
-                            <div class="item">
-                                <img src="http://lorempixel.com/640/480/?2" alt="Chania">
-                            </div>
-
-                            <div class="item">
-                                <img src="http://lorempixel.com/640/480/?3" alt="Chania">
-                            </div>
-
-                            <div class="item">
-                                <img src="http://lorempixel.com/640/480/?4" alt="Chania">
-                            </div>
+                            @if(count($instances['servico']->Imagens)>0)
+                                @foreach($instances['servico']->Imagens as $i => $imagem)
+                                    @if($i == 0)
+                                        <div class="item active">
+                                            <img src="{{ $imagem['nome'] }}" alt="Chania" width="640" height="480">
+                                        </div>
+                                    @else
+                                        <div class="item">
+                                            <img src="{{ $imagem['nome'] }}" alt="Chania" width="640" height="480">
+                                        </div>
+                                    @endif
+                                @endforeach
+                            @else
+                                <div class="item active">
+                                    <img src="http://lorempixel.com/640/480/?1" alt="Chania">
+                                </div>
+                                <div class="item">
+                                    <img src="http://lorempixel.com/640/480/?1" alt="Chania">
+                                </div>
+                                <div class="item">
+                                    <img src="http://lorempixel.com/640/480/?1" alt="Chania">
+                                </div>
+                            @endif
                         </div>
 
                         <br/>
@@ -110,8 +112,8 @@
                 {{-- Texto Descricao --}}
                 <div class="panel-body text-justify">
                     <p>
-                        @if(isset($instances['descricao']))
-                            {{ $instances['descricao'] }}
+                        @if(isset($instances['servico']['descricao']))
+                            {{ $instances['servico']['descricao'] }}
                         @else
                             Nenhuma descricao encontrada
                         @endif
@@ -137,14 +139,14 @@
                             <p>Quantidade do servico basico</p>
                         </div>
                         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
-                            {!! Form::select("extra", ["1($5)","2($10)","3($15)","4($20)","5($25)","6($30)","7($35)","8($40)","9($45)","10($50)","11($55)","12($60)","13($65)","14($70)","15($75)"]) !!}
+                            {!! Form::select("extra", ["1($".($instances['servico']['valor']*1).")","2($".($instances['servico']['valor']*2).")","3($".($instances['servico']['valor']*3).")","4($".($instances['servico']['valor']*4).")","5($".($instances['servico']['valor']*5).")","6($".($instances['servico']['valor']*6).")","7($".($instances['servico']['valor']*7).")","8($".($instances['servico']['valor']*8).")","9($".($instances['servico']['valor']*9).")","10($".($instances['servico']['valor']*10).")","11($".($instances['servico']['valor']*11).")","12($".($instances['servico']['valor']*12).")","13($".($instances['servico']['valor']*13).")","14($".($instances['servico']['valor']*14).")","15($".($instances['servico']['valor']*15).")"]) !!}
                         </div>
                     </div>
                 </div>
 
                 {{-- Servico Extra --}}
-                @if(isset($instances['extras']))
-                    @foreach($instances['extras'] as $extra)
+                @if(isset($instances['servico']->Extras))
+                    @foreach($instances['servico']->Extras as $extra)
                         <div class="panel-footer">
                             <div class="row">
                                 <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 text-left">
@@ -156,7 +158,7 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
-                                    {!! Form::select("extra", ["1($5)","2($10)","3($15)","4($20)","5($25)","6($30)","7($35)","8($40)","9($45)","10($50)","11($55)","12($60)","13($65)","14($70)","15($75)"]) !!}
+                                    {!! Form::select("extra", ["1($".($extra['valor']*1).")","2($".($extra['valor']*2).")","3($".($extra['valor']*3).")","4($".($extra['valor']*4).")","5($".($extra['valor']*5).")","6($".($extra['valor']*6).")","7($".($extra['valor']*7).")","8($".($extra['valor']*8).")","9($".($extra['valor']*9).")","10($".($extra['valor']*10).")","11($".($extra['valor']*11).")","12($".($extra['valor']*12).")","13($".($extra['valor']*13).")","14($".($extra['valor']*14).")","15($".($extra['valor']*15).")"]) !!}
                                 </div>
                             </div>
                         </div>
@@ -179,7 +181,7 @@
         </div>
 
         {{-- Comentarios --}}
-        @if(isset($instances['comentarios']))
+        @if(isset($instances['servico']->Comentarios))
             <div class="row" id="comentarios">
                 <div class="panel panel-default">
 
@@ -189,7 +191,7 @@
                             <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 text-left">
                                 <p>
                                     <strong>
-                                        {{ count($instances['comentarios']) }} Comentarios
+                                        {{ count($instances['servico']->Comentarios) }} Comentarios
                                         <i class="glyphicon glyphicon-star"></i>
                                         <i class="glyphicon glyphicon-star"></i>
                                         <i class="glyphicon glyphicon-star"></i>
@@ -205,13 +207,13 @@
                     </div>
 
                     {{-- Comentarios --}}
-                    @foreach($instances['comentarios'] as $i => $comentario)
+                    @foreach($instances['servico']->Comentarios as $i => $comentario)
                         <div class="panel-body">
                             <div class="form-group" id="{{ $comentario['idUser'] }}">
 
                                 {{-- Foto --}}
                                 <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-left">
-                                    <a href=""><img src="http://lorempixel.com/100/100/?{{$i}}"
+                                    <a href=""><img src="{{ $comentario['User']->foto }}"
                                                     class="img-responsive img-circle"></a>
                                 </div>
 
@@ -226,7 +228,7 @@
                                                 @for($cont = $cont; $cont <= 5; $cont++)
                                                     <i class="glyphicon glyphicon-star-empty"></i>
                                                 @endfor
-                                                {{ $comentario['nomeUser'] }}
+                                                {{ $comentario['User']->nome }}
                                                 <small>{{ $comentario['data'] }}</small>
                                             </p>
                                         </div>
@@ -253,7 +255,7 @@
 
     </div>
 
-    {{-- Esquerda --}}
+    {{-- Direita --}}
     <div class="container span3 col-md-3">
 
         {{-- Comprar Agora --}}
@@ -274,11 +276,11 @@
             {{-- Servico Basico --}}
             <div class="panel-footer">
                 <div class="row">
-                    <div class="col-xs-8 col-sm-8 ol-md-8 col-lg-8 text-left">
-                        <p>Quantidade do servico basico</p>
+                    <div class="col-xs-6 col-sm-6 ol-md-6 col-lg-6 text-left">
+                        <p><small>Quantidade do servico basico</small></p>
                     </div>
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-right">
-                        {!! Form::select("extra", ["1($5)","2($10)","3($15)","4($20)","5($25)","6($30)","7($35)","8($40)","9($45)","10($50)","11($55)","12($60)","13($65)","14($70)","15($75)"]) !!}
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right">
+                        {!! Form::select("extra", ["1($".($instances['servico']['valor']*1).")","2($".($instances['servico']['valor']*2).")","3($".($instances['servico']['valor']*3).")","4($".($instances['servico']['valor']*4).")","5($".($instances['servico']['valor']*5).")","6($".($instances['servico']['valor']*6).")","7($".($instances['servico']['valor']*7).")","8($".($instances['servico']['valor']*8).")","9($".($instances['servico']['valor']*9).")","10($".($instances['servico']['valor']*10).")","11($".($instances['servico']['valor']*11).")","12($".($instances['servico']['valor']*12).")","13($".($instances['servico']['valor']*13).")","14($".($instances['servico']['valor']*14).")","15($".($instances['servico']['valor']*15).")"]) !!}
                     </div>
                 </div>
             </div>
@@ -292,15 +294,19 @@
                 {{-- Avaliacao dos Clientes --}}
                 <div class="row">
                     <div class="col-xs-7 col-sm-7 ol-md-7 col-lg-7 text-left">
-                        <p>Avaliacao dos clientes</p>
+                        <p>
+                            <small>Avaliacao dos clientes</small>
+                        </p>
                     </div>
                     <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 text-right">
                         <p>
-                            <i class="glyphicon glyphicon-star"></i>
-                            <i class="glyphicon glyphicon-star"></i>
-                            <i class="glyphicon glyphicon-star"></i>
-                            <i class="glyphicon glyphicon-star-empty"></i>
-                            <i class="glyphicon glyphicon-star-empty"></i>
+                            <small>
+                                <i class="glyphicon glyphicon-star"></i>
+                                <i class="glyphicon glyphicon-star"></i>
+                                <i class="glyphicon glyphicon-star"></i>
+                                <i class="glyphicon glyphicon-star-empty"></i>
+                                <i class="glyphicon glyphicon-star-empty"></i>
+                            </small>
                             <strong>
                                 @if(isset($instances['avaliacao']))
                                     {{ $instances['avaliacao'] }}
@@ -318,7 +324,7 @@
                 <div class="row">
 
                     <div class="col-xs-7 col-sm-7 ol-md-7 col-lg-7 text-left">
-                        <p>Pedidos na fila</p>
+                        <p><small>Pedidos na fila</small></p>
                     </div>
 
                     <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 text-right">
@@ -335,16 +341,23 @@
 
             <div class="panel-body text-justify">
 
-                <div class="text-center col-md-12 col-md-offset-0">
-                    <a href=""><img src="http://lorempixel.com/400/400/?" class="img-responsive img-thumbnail"></a>
-                </div>
+                @if(isset($instances['servico']->User))
+                    <div class="text-center col-md-12 col-md-offset-0">
+                        <a href=""><img src="{{ $instances['servico']->User['foto'] }}"
+                                        class="img-responsive img-thumbnail"></a>
+                    </div>
+                @else
+                    <div class="text-center col-md-12 col-md-offset-0">
+                        <a href=""><img src="http://lorempixel.com/400/400/?" class="img-responsive img-thumbnail"></a>
+                    </div>
+                @endif
             </div>
 
             <div class="panel-body text-justify">
                 <small>
-                    @if(isset($instances['user']))
-                        <strong><p> {{ $instances['user']['nome'] }} </p></strong>
-                        <p> {{ $instances['user']['descricao'] }} </p>
+                    @if(isset($instances['servico']->User))
+                        <strong><p> {{ $instances['servico']->User['nome'] }} </p></strong>
+                        <p> {{ $instances['servico']->User['descricao'] }} </p>
                     @else
                         <strong><p> Proprietario </p></strong>
                         <p> Sem nenhuma descricao. </p>
@@ -358,10 +371,10 @@
 
         </div>
 
-        @if(isset($instances['tags']))
+        @if(isset($instances['servico']->Tags))
             <div class="container-fluid">
-                @foreach($instances['tags'] as $tag)
-                    <span class="label label-default">{{ $tag }}</span>
+                @foreach($instances['servico']->Tags as $tag)
+                    <span class="label label-default">{{ $tag['nome'] }}</span>
                 @endforeach
             </div>
         @endif

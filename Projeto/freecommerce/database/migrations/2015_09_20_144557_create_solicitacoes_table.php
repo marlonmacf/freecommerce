@@ -16,6 +16,8 @@ class CreateSolicitacoesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('idUser')->unsigned();
             $table->bigInteger('idServico')->unsigned();
+            $table->decimal('valor', 8, 2);
+            $table->string('descricao');
 
             $table->foreign('idUser')->references('id')->on('users');
             $table->foreign('idServico')->references('id')->on('servicos');

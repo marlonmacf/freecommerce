@@ -13,8 +13,10 @@ class Servico extends Model
         'idCompetencia',
         'titulo',
         'descricao',
+        'valor',
         'duracao',
-        'avaliacao'
+        'avaliacao',
+        'status'
     ];
 
     protected $hidden = [
@@ -24,36 +26,41 @@ class Servico extends Model
 
     public function Comentarios()
     {
-        return $this->hasMany('FreeCommerce\Comentario');
+        return $this->hasMany('FreeCommerce\Comentario', 'idServico');
     }
 
     public function Servicos_has_Tags()
     {
-        return $this->hasMany('FreeCommerce\Servico_has_Tag');
+        return $this->hasMany('FreeCommerce\Servico_has_Tag', 'idServico');
+    }
+
+    public function Tags()
+    {
+        return $this->belongsToMany('FreeCommerce\Tag', 'servicos_has_tags', 'idServico', 'idTag');
     }
 
     public function Imagens()
     {
-        return $this->hasMany('FreeCommerce\Imagem');
+        return $this->hasMany('FreeCommerce\Imagem', 'idServico');
     }
 
     public function Competencia()
     {
-        return $this->belongsTo('FreeCommerce\Competencia');
+        return $this->belongsTo('FreeCommerce\Competencia', 'idCompetencia');
     }
 
     public function Extras()
     {
-        return $this->hasMany('FreeCommerce\Extra');
+        return $this->hasMany('FreeCommerce\Extra', 'idServico');
     }
 
     public function Solicitacoes()
     {
-        return $this->hasMany('FreeCommerce\Solicitacao');
+        return $this->hasMany('FreeCommerce\Solicitacao', 'idServico');
     }
 
-    public function Perfil()
+    public function User()
     {
-        return $this->belongsTo('FreeCommerce\Perfil');
+        return $this->belongsTo('FreeCommerce\User', 'idUser');
     }
 }

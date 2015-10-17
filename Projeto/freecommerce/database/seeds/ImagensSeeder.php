@@ -13,6 +13,6 @@ class ImagensSeeder extends Seeder
     {
         DB::table('imagens')->delete();
 
-        factory('FreeCommerce\Imagem', 100)->create();
+        factory('FreeCommerce\Imagem', 5000)->create();
     }
 }

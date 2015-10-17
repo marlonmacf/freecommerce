@@ -18,8 +18,10 @@ class CreateServicosTable extends Migration
             $table->integer('idCompetencia')->unsigned();
             $table->string('titulo', 100);
             $table->string('descricao', 200);
+            $table->decimal('valor', 8, 2);
             $table->integer('duracao')->nullable();
             $table->integer('avaliacao')->nullable();
+            $table->integer('status')->nullable();
 
             $table->foreign('idUser')->references('id')->on('users');
             $table->foreign('idCompetencia')->references('id')->on('competencias');

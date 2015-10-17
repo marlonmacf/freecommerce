@@ -40,9 +40,8 @@
                                         <div class="panel panel-default">
 
                                             <a href="{{ route('busca.servico', $servico->id) }}"><img
-                                                        src="{{"http://lorempixel.com/640/480/?" . $i }}"
+                                                        src="{{ $servico->Imagens[0]->nome }}"
                                                         class="img-responsive"></a>
-                                            {{--<img src="{{ url('no-img.jpg') }}" alt="300" width="200" />--}}
 
                                             <div class="panel-body">
                                                 @if(!empty($servico->descricao))
@@ -68,9 +67,9 @@
                                                         @endif
                                                     </div>
                                                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                                        @if(!empty($servico->duracao))
+                                                        @if(!empty($servico->valor))
                                                             <p class="pull-right"><i
-                                                                        class="glyphicon glyphicon-usd">{{$servico->duracao}}</i>
+                                                                        class="glyphicon glyphicon-usd">{{$servico->valor}}</i>
                                                             </p>
                                                         @else
                                                             <p class="pull-right"><i

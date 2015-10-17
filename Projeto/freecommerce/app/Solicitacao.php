@@ -10,7 +10,9 @@ class Solicitacao extends Model
 
     protected $fillable = [
         'idUser',
-        'idServico'
+        'idServico',
+        'valor',
+        'descricao'
     ];
 
     protected $hidden = [
