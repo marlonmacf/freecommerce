@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10b8df12-71ca-4f96-8a37-d072c5743085" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_09_20_144354_create_servicos_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_09_20_144354_create_servicos_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_09_20_144413_create_imagens_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_09_20_144413_create_imagens_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_09_20_144520_create_comentarios_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_09_20_144520_create_comentarios_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_09_20_144557_create_solicitacoes_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_09_20_144557_create_solicitacoes_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Controle/BuscaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controle/BuscaController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Controle/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controle/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/ImagensSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/ImagensSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/factories/ModelFactory.php" afterPath="$PROJECT_DIR$/database/factories/ModelFactory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Servico.php" afterPath="$PROJECT_DIR$/app/Servico.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Solicitacao.php" afterPath="$PROJECT_DIR$/app/Solicitacao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/app/busca/servico/index/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/app/busca/servico/index/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/app/home/index/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/app/home/index/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Controle/ServicoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controle/ServicoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/app/controle/servicos/partials/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/app/controle/servicos/partials/form.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="freecommerce.iws" />
@@ -92,7 +80,6 @@
         <option value="$PROJECT_DIR$/public/css/app.css" />
         <option value="$PROJECT_DIR$/resources/views/app/app.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Controle/ServicoController.php" />
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RedirectsUsers.php" />
         <option value="$PROJECT_DIR$/resources/views/app/auth/password.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/app/auth/register.blade.php" />
@@ -111,7 +98,6 @@
         <option value="$PROJECT_DIR$/resources/views/app/partials/menuCategorias.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/resources/views/app/controle/servicos/partials/js.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/app/controle/servicos/partials/form.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_09_20_144413_create_imagens_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_09_20_144520_create_comentarios_table.php" />
@@ -129,6 +115,8 @@
         <option value="$PROJECT_DIR$/app/Servico.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Controle/BuscaController.php" />
         <option value="$PROJECT_DIR$/resources/views/app/busca/servico/index/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Controle/ServicoController.php" />
+        <option value="$PROJECT_DIR$/resources/views/app/controle/servicos/partials/form.blade.php" />
       </list>
     </option>
   </component>
@@ -438,7 +426,13 @@
       <option name="project" value="LOCAL" />
       <updated>1444944495428</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="CORREÇÕES - HomeController e BuscaController">
+      <created>1445110511353</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1445110511353</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -448,6 +442,7 @@
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25234374" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3285528" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24420401" sideWeight="0.503125" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -458,7 +453,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3285528" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -502,7 +496,8 @@
     <MESSAGE value="busaca servico" />
     <MESSAGE value="project reborn" />
     <MESSAGE value="altas parada" />
-    <option name="LAST_COMMIT_MESSAGE" value="altas parada" />
+    <MESSAGE value="CORREÇÕES - HomeController e BuscaController" />
+    <option name="LAST_COMMIT_MESSAGE" value="CORREÇÕES - HomeController e BuscaController" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -557,13 +552,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43">
           <caret line="77" column="111" selection-start-line="77" selection-start-column="111" selection-end-line="77" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controle/ServicoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617">
-          <caret line="14" column="75" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="75" />
         </state>
       </provider>
     </entry>
@@ -634,20 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21402878">
           <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/app/controle/servicos/partials/form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8068182">
-          <caret line="104" column="11" selection-start-line="104" selection-start-column="11" selection-end-line="104" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/app/controle/servicos/partials/js.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09483961">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="17" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -885,16 +859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controle/BuscaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.576923">
-          <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
-          <folding>
-            <element signature="e#58#83#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/app/busca/servico/index/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6016807">
@@ -910,6 +874,40 @@
             <marker date="1445110385435" expanded="true" signature="-1:-1" placeholder="..." />
             <marker date="1445110385435" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/app/controle/servicos/partials/js.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2420168">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controle/BuscaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31428573">
+          <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
+          <folding>
+            <element signature="e#58#83#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controle/ServicoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.192307">
+          <caret line="31" column="68" selection-start-line="31" selection-start-column="68" selection-end-line="31" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/app/controle/servicos/partials/form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62857145">
+          <caret line="43" column="97" selection-start-line="43" selection-start-column="97" selection-end-line="43" selection-end-column="97" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -16,15 +16,12 @@
 <div class="col-md-8 col-md-offset-2">
     <div class="form-group">
         {!! Form::label('categoria', 'Categoria:') !!}
-        {!! Form::select('categoria', array(null), null, ['class'=>'form-control', 'placeholder' => 'Selecione uma Categoria']) !!}
+        {!! Form::select('categoria', $instances['categorias'], null, ['class'=>'form-control', 'placeholder' => 'Selecione uma Categoria', 'onclick' => 'buildCompetencias()', 'id' => 'categorias']) !!}
     </div>
 </div>
 
 <div class="col-md-8 col-md-offset-2">
-    <div class="form-group">
-        {!! Form::label('competencia', 'Competencia:') !!}
-        {!! Form::select('competencia', array(null), null, ['class'=>'form-control', 'placeholder' => 'Selecione uma Competencia']) !!}
-    </div>
+    <div id="competencias" class="form-group"></div>
 </div>
 
 <div class="col-md-4 col-md-offset-2">
@@ -34,10 +31,17 @@
     </div>
 </div>
 
-<div class="col-md-3 col-md-offset-1">
+<div class="col-md-1 col-md-offset-1">
+    <div class="form-group">
+        {!! Form::label('valor', 'Valor:') !!}
+        {!! Form::text('valor', null, ['class'=>'form-control', 'placeholder' => '$0,00']) !!}
+    </div>
+</div>
+
+<div class="col-md-1 col-md-offset-1">
     <div class="form-group">
         {!! Form::label('duracao', 'Duracao:') !!}
-        {!! Form::select('duracao', ["Ate 24 horas", "Ate 3 dias", "Ate 7 dias", "Mais que 7 dias"], null, ['class'=>'form-control']) !!}
+        {!! Form::text('duracao', null, ['class'=>'form-control', 'placeholder' => '0 dias']) !!}
     </div>
 </div>
 
@@ -49,17 +53,8 @@
 </div>
 
 <div class="col-md-8 col-md-offset-2">
-    <div class="row">
-        <div class="col-sm-2 col-xs-2 col-md-2 col-lg-2">
-            <div class="form-group">
-                {!! Form::button('<i class="glyphicon glyphicon-picture"></i> '.' Enviar ',['class' => 'btn btn-default', 'id' => 'btnCancelar']) !!}
-            </div>
-        </div>
-        <div class="col-sm-10 col-xs-10 col-md-10 col-lg-10">
-            <div class="form-group">
-                {!! Form::button('<i class="glyphicon glyphicon-trash"></i> '.' Apagar ',['class' => 'btn btn-default', 'id' => 'btnApagar']) !!}
-            </div>
-        </div>
+    <div class="form-group">
+        {!! Form::file('imagensServico[]', ['class' => 'filestyle', 'multiple' => 'multiple', 'name' => 'imagensServico[]']) !!}
     </div>
 </div>
 
@@ -89,7 +84,7 @@
         //Inserindo o elemento no pai:
         objPai.appendChild(objFilho);
         //Escrevendo algo no filho recém-criado:
-        document.getElementById("filho" + cont).innerHTML = "<div class='col-md-3 col-md-offset-2'> <div class='form-group'> <input tipe='text' placeholder='Descricao' name='descricaoExtra" + cont + "' class='form-control'> </div></div> <div class='col-md-2 col-md-offset-1'> <div class='form-group'> <input tipe='text' placeholder='Valor' name='valorExtra" + cont + "' class='form-control'> </div></div> <div class='col-md-1 col-md-offset-1'> <div class='form-group'>  <a class='btn btn-default form-control' onclick='removeForm(" + cont +")'> <i class='glyphicon glyphicon-trash'></i> Apagar </a> </div> </div>";
+        document.getElementById("filho" + cont).innerHTML = "<div class='col-md-3 col-md-offset-2'> <div class='form-group'> <input tipe='text' placeholder='Descricao' name='descricaoExtra" + cont + "' class='form-control'> </div></div> <div class='col-md-2 col-md-offset-1'> <div class='form-group'> <input tipe='text' placeholder='Valor' name='valorExtra" + cont + "' class='form-control'> </div></div> <div class='col-md-1 col-md-offset-1'> <div class='row'> <div class='form-group'>  <a class='row btn btn-default' onclick='removeForm(" + cont + ")'> <i class='glyphicon glyphicon-trash'></i> Apagar </a> </div> </div> </div>";
         cont++;
     }
 
@@ -101,7 +96,39 @@
         var removido = objPai.removeChild(objFilho);
     }
 
-    function addImage() {
-        var
+    function buildCompetencias() {
+        //Removendo o DIV com id específico do nó-pai:
+        var objPai = document.getElementById("competencias");
+        var objFilho = document.getElementById("select");
+        if (objFilho) {
+            objPai.removeChild(document.getElementById("select"));
+            objPai.removeChild(document.getElementById("label"));
+        }
+
+        //Recebe o valor da categoria selecionada
+        var categoria = document.getElementById("categorias").value;
+
+        if (categoria) {
+            //Criando o elemento DIV;
+            var objFilho = document.createElement("select");
+
+            //Definindo atributos ao objFilho:
+            objFilho.setAttribute("id", "select");
+            objFilho.setAttribute("class", "form-control");
+
+            //Inserindo o elemento no pai:
+            objPai.innerHTML = "<label id='label' for='competencia'>Competencia: </label>";
+            objPai.appendChild(objFilho);
+
+            //Escrevendo algo no filho recém-criado:
+            var options = "";
+            var competencias = {!!json_encode($instances['competencias'])!!};
+
+            for (var cont = 0; cont < competencias.length; cont++) {
+                options += "<option value='" + competencias[categoria][cont] + "'>" + competencias[categoria][cont] + "</option>";
+            }
+            objFilho.innerHTML = options;
+        }
     }
+
 </script>

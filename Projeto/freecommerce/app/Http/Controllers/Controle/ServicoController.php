@@ -19,7 +19,17 @@ class ServicoController extends Controller
 
     public function create()
     {
-        return view('app.controle.servicos.create.index');
+        //MENU CATEGORIAS
+        $categorias = DB::table('categorias')->get();
+        foreach ($categorias as $i => $categoria) {
+            $data['categorias'][$i] = $categoria->nome;
+            $competencias = DB::table('competencias')->where('idCategoria', $categoria->id)->get();;
+            foreach ($competencias as $competencia) {
+                $data['competencias'][$i][] = $competencia->nome;
+            }
+        }
+
+        return view('app.controle.servicos.create.index')->with('instances', $data);
     }
 
     public function store(Request $request)
