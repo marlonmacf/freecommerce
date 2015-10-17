@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>FreeCommerce</title>
+    <title>EasyPeasy</title>
 
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
@@ -27,7 +27,7 @@
     <div class="container">
 
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{ url('/') }}"><strong> FreeCommerce </strong></a>
+            <a class="navbar-brand" href="{{ url('/') }}"><strong> EasyPeasy </strong></a>
             <ul class="nav navbar-form pull-left">
                 {!! Form::open(array('route' => 'busca.servicos.tags', 'method' =>'get' ,'class' => 'form-horizontal ajax', 'id' => 'busca')) !!}
                 <div class="input-group">

@@ -49,7 +49,7 @@
                 @endforeach
             @else
                 <tr>
-                    <td
+                    <td colspan="5">Nenhum Servico encontrado</td>
                 </tr>
             @endif
         </table>
