@@ -38,8 +38,6 @@
                             @endfor
                         </td>
                         <td width="300">
-                            <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-edit"></i> Editar
-                            </a>
                             <a href="{{ route('busca.servico', $servico->id) }}" class="btn btn-default btn-sm"><i
                                         class="glyphicon glyphicon-eye-open"></i>
                                 Visializar

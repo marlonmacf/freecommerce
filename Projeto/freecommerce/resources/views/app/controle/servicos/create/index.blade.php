@@ -23,7 +23,7 @@
                             </div>
                         @endif
 
-                        {!! Form::open(array('url' => 'controle.servico', 'method' =>'post' ,'class' => 'form-horizontal ajax', 'id' => 'create')) !!}
+                        {!! Form::open(array('route' => 'controle.servico.store', 'method' =>'post' ,'class' => 'form-horizontal ajax', 'id' => 'create', 'enctype'=> 'ultipart/form-data')) !!}
                         @include('app.controle.servicos.partials.form')
                         {!! Form::close() !!}
 

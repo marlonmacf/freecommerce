@@ -74,10 +74,10 @@
                                     <img src="http://lorempixel.com/640/480/?1" alt="Chania">
                                 </div>
                                 <div class="item">
-                                    <img src="http://lorempixel.com/640/480/?1" alt="Chania">
+                                    <img src="http://lorempixel.com/640/480/?2" alt="Chania">
                                 </div>
                                 <div class="item">
-                                    <img src="http://lorempixel.com/640/480/?1" alt="Chania">
+                                    <img src="http://lorempixel.com/640/480/?3" alt="Chania">
                                 </div>
                             @endif
                         </div>

@@ -46,6 +46,7 @@
                 <li><a href="{{ url('/auth/login') }}"> Acesar sua conta </a></li>
                 <li><a href="{{ url('/auth/register') }}"> Criar uma conta </a></li>
             @else
+                <li><a href="#"><i class="glyphicon glyphicon-shopping-cart"></i></a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                        aria-expanded="false"><i class="glyphicon glyphicon-user"></i> {{ Auth::user()->nome }} <span
@@ -55,8 +56,6 @@
                         <li><a href="{{ route('controle.venda.index') }}"> Minhas Vendas </a></li>
                         <li><a href="{{ route('controle.solicitacao.index') }}"> Minhas Solicitacoes </a></li>
                         <li><a href="{{ route('controle.perfil.index') }}"> Meu Perfil </a></li>
-                        <div class="nav-divider"></div>
-                        <li><a href="#"> Ajuda </a></li>
                         <div class="nav-divider"></div>
                         <li><a href="{{ url('/auth/logout') }}"> Sair </a></li>
                     </ul>

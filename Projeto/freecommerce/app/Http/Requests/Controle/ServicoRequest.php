@@ -23,17 +23,27 @@ class ServicoRequest extends Request
      */
     public function rules()
     {
-        $rules['idCompetencia'] = 'required';
         $rules['titulo'] = 'required';
         $rules['descricao'] = 'required';
+        $rules['competencia'] = 'required';
+        $rules['chaves'] = 'required';
+        $rules['valor'] = 'required | numeric';
+        $rules['duracao'] = 'required | numeric';
+        //$rules['imagensServico'] = 'mimes:jpeg,jpg,jpeg,png';
+
         return $rules;
     }
 
     public function attributes()
     {
-        $attributes['idCompetencia'] = 'Competencia';
         $attributes['titulo'] = 'Titulo';
         $attributes['descricao'] = 'Descricao';
+        $attributes['competencia'] = 'Competencia';
+        $attributes['chaves'] = 'Palavras chaves';
+        $attributes['valor'] = 'Valor';
+        $attributes['duracao'] = 'Duracao';
+        $attributes['imagensServico'] = 'Imagens';
+
         return $attributes;
     }
 }

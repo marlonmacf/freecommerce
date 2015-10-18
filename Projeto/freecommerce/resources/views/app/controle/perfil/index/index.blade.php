@@ -13,9 +13,7 @@
                 </div>
                 <div class="panel-body">
                     <ul class="nav nav">
-                        <li><a href="#">Configuracoes do Perfil Publico</a></li>
                         <li><a href="#">Configuracoes de Conta</a></li>
-                        <li><a href="#">Configuracoes de Seguranca</a></li>
                     </ul>
                 </div>
             </div>

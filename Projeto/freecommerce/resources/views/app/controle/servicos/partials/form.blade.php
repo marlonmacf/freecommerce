@@ -75,17 +75,22 @@
 
 <script type="text/javascript">
     var cont = 1;
+    var quant = 1;
     function addForm() {
-        var objPai = document.getElementById("extras");
-        //Criando o elemento DIV;
-        var objFilho = document.createElement("div");
-        //Definindo atributos ao objFilho:
-        objFilho.setAttribute("id", "filho" + cont);
-        //Inserindo o elemento no pai:
-        objPai.appendChild(objFilho);
-        //Escrevendo algo no filho recém-criado:
-        document.getElementById("filho" + cont).innerHTML = "<div class='col-md-3 col-md-offset-2'> <div class='form-group'> <input tipe='text' placeholder='Descricao' name='descricaoExtra" + cont + "' class='form-control'> </div></div> <div class='col-md-2 col-md-offset-1'> <div class='form-group'> <input tipe='text' placeholder='Valor' name='valorExtra" + cont + "' class='form-control'> </div></div> <div class='col-md-1 col-md-offset-1'> <div class='row'> <div class='form-group'>  <a class='row btn btn-default' onclick='removeForm(" + cont + ")'> <i class='glyphicon glyphicon-trash'></i> Apagar </a> </div> </div> </div>";
-        cont++;
+        if (quant <= 10) {
+            var objPai = document.getElementById("extras");
+            //Criando o elemento DIV;
+            var objFilho = document.createElement("div");
+            //Definindo atributos ao objFilho:
+            objFilho.setAttribute("id", "filho" + cont);
+            //Inserindo o elemento no pai:
+            objPai.appendChild(objFilho);
+            //Escrevendo algo no filho recém-criado:
+            document.getElementById("filho" + cont).innerHTML = "<div class='col-md-3 col-md-offset-2'> <div class='form-group'> <input tipe='text' placeholder='Descricao' name='extras[" + cont + "][descricao]' class='form-control'> </div></div> <div class='col-md-2 col-md-offset-1'> <div class='form-group'> <input tipe='text' placeholder='Valor' name='extras[" + cont + "][valor]' class='form-control'> </div></div> <div class='col-md-1 col-md-offset-1'> <div class='row'> <div class='form-group'>  <a class='row btn btn-default' onclick='removeForm(" + cont + ")'> <i class='glyphicon glyphicon-trash'></i> Apagar </a> </div> </div> </div>";
+            cont++;
+            quant++;
+        }
+        console.log(cont);
     }
 
     function removeForm(id) {
@@ -94,14 +99,16 @@
 
         //Removendo o DIV com id específico do nó-pai:
         var removido = objPai.removeChild(objFilho);
+        quant--;
+        console.log(cont);
     }
 
     function buildCompetencias() {
         //Removendo o DIV com id específico do nó-pai:
         var objPai = document.getElementById("competencias");
-        var objFilho = document.getElementById("select");
+        var objFilho = document.getElementById("competencia");
         if (objFilho) {
-            objPai.removeChild(document.getElementById("select"));
+            objPai.removeChild(document.getElementById("competencia"));
             objPai.removeChild(document.getElementById("label"));
         }
 
@@ -113,7 +120,8 @@
             var objFilho = document.createElement("select");
 
             //Definindo atributos ao objFilho:
-            objFilho.setAttribute("id", "select");
+            objFilho.setAttribute("id", "competencia");
+            objFilho.setAttribute("name", "competencia");
             objFilho.setAttribute("class", "form-control");
 
             //Inserindo o elemento no pai:
