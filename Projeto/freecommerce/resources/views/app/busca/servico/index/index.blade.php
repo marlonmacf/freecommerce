@@ -132,17 +132,19 @@
                     <h4>Confira os Extras do meu Servico</h4>
                 </div>
 
-                {{-- Servico Basico --}}
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 text-left">
-                            <p>Quantidade do servico basico</p>
-                        </div>
-                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
-                            {!! Form::select("extra", ["1($".($instances['servico']['valor']*1).")","2($".($instances['servico']['valor']*2).")","3($".($instances['servico']['valor']*3).")","4($".($instances['servico']['valor']*4).")","5($".($instances['servico']['valor']*5).")","6($".($instances['servico']['valor']*6).")","7($".($instances['servico']['valor']*7).")","8($".($instances['servico']['valor']*8).")","9($".($instances['servico']['valor']*9).")","10($".($instances['servico']['valor']*10).")","11($".($instances['servico']['valor']*11).")","12($".($instances['servico']['valor']*12).")","13($".($instances['servico']['valor']*13).")","14($".($instances['servico']['valor']*14).")","15($".($instances['servico']['valor']*15).")"]) !!}
+                @if($instances['servico']->compravel)
+                    {{-- Servico Basico --}}
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 text-left">
+                                <p>Quantidade do servico basico</p>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
+                                {!! Form::select("extra", ["1($".($instances['servico']['valor']*1).")","2($".($instances['servico']['valor']*2).")","3($".($instances['servico']['valor']*3).")","4($".($instances['servico']['valor']*4).")","5($".($instances['servico']['valor']*5).")","6($".($instances['servico']['valor']*6).")","7($".($instances['servico']['valor']*7).")","8($".($instances['servico']['valor']*8).")","9($".($instances['servico']['valor']*9).")","10($".($instances['servico']['valor']*10).")","11($".($instances['servico']['valor']*11).")","12($".($instances['servico']['valor']*12).")","13($".($instances['servico']['valor']*13).")","14($".($instances['servico']['valor']*14).")","15($".($instances['servico']['valor']*15).")"]) !!}
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endif
 
                 {{-- Servico Extra --}}
                 @if(isset($instances['servico']->Extras))
@@ -157,25 +159,29 @@
                                         {!! Form::label('extra' . $extra['id'],  $extra['descricao']) !!}
                                     </div>
                                 </div>
-                                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
-                                    {!! Form::select("extra", ["1($".($extra['valor']*1).")","2($".($extra['valor']*2).")","3($".($extra['valor']*3).")","4($".($extra['valor']*4).")","5($".($extra['valor']*5).")","6($".($extra['valor']*6).")","7($".($extra['valor']*7).")","8($".($extra['valor']*8).")","9($".($extra['valor']*9).")","10($".($extra['valor']*10).")","11($".($extra['valor']*11).")","12($".($extra['valor']*12).")","13($".($extra['valor']*13).")","14($".($extra['valor']*14).")","15($".($extra['valor']*15).")"]) !!}
-                                </div>
+                                @if($instances['servico']->compravel)
+                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
+                                        {!! Form::select("extra", ["1($".($extra['valor']*1).")","2($".($extra['valor']*2).")","3($".($extra['valor']*3).")","4($".($extra['valor']*4).")","5($".($extra['valor']*5).")","6($".($extra['valor']*6).")","7($".($extra['valor']*7).")","8($".($extra['valor']*8).")","9($".($extra['valor']*9).")","10($".($extra['valor']*10).")","11($".($extra['valor']*11).")","12($".($extra['valor']*12).")","13($".($extra['valor']*13).")","14($".($extra['valor']*14).")","15($".($extra['valor']*15).")"]) !!}
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     @endforeach
                 @endif
 
-                {{-- Compre Agora --}}
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="form-group">
-                            <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 text-right">
-                                {!! Form::button('Comprar Agora',['class' => 'btn btn-success']) !!}
-                                {!! Form::button('<i class="glyphicon glyphicon-shopping-cart"></i>',['class' => 'btn btn-success']) !!}
+                @if($instances['servico']->compravel)
+                    {{-- Compre Agora --}}
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 text-right">
+                                    {!! Form::button('Comprar Agora',['class' => 'btn btn-success']) !!}
+                                    {!! Form::button('<i class="glyphicon glyphicon-shopping-cart"></i>',['class' => 'btn btn-success']) !!}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endif
 
             </div>
         </div>
@@ -259,33 +265,32 @@
     <div class="container span3 col-md-3">
 
         {{-- Comprar Agora --}}
-        <div class="panel panel-default">
+        @if($instances['servico']->compravel)
+            <div class="panel panel-default">
 
-            {{-- Botoes --}}
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-                        {!! Form::button('Comprar Agora',['class' => 'btn btn-success btn-lg btn-block']) !!}
-                    </div>
-                    <div class="row col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                        {!! Form::button('<i class="glyphicon glyphicon-shopping-cart"></i>',['class' => 'btn btn-success btn-lg']) !!}
+                {{-- Botoes --}}
+                <div class="panel-body">
+                    {!! Form::open(array('url' => 'controle/carrinho/'.$instances['servico']['id'], 'method' =>'post' ,'class' => 'form-horizontal ajax', 'id' => 'comprar')) !!}
+                    {!! Form::submit('Comprar Agora',['class' => 'btn btn-success btn-lg btn-block', 'id' =>  'btnComprar']) !!}
+                    {!! Form::close() !!}
+                </div>
+
+                {{-- Servico Basico --}}
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 ol-md-6 col-lg-6 text-left">
+                            <p>
+                                <small>Quantidade do servico basico</small>
+                            </p>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right">
+                            {!! Form::select("extra", ["1($".($instances['servico']['valor']*1).")","2($".($instances['servico']['valor']*2).")","3($".($instances['servico']['valor']*3).")","4($".($instances['servico']['valor']*4).")","5($".($instances['servico']['valor']*5).")","6($".($instances['servico']['valor']*6).")","7($".($instances['servico']['valor']*7).")","8($".($instances['servico']['valor']*8).")","9($".($instances['servico']['valor']*9).")","10($".($instances['servico']['valor']*10).")","11($".($instances['servico']['valor']*11).")","12($".($instances['servico']['valor']*12).")","13($".($instances['servico']['valor']*13).")","14($".($instances['servico']['valor']*14).")","15($".($instances['servico']['valor']*15).")"]) !!}
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            {{-- Servico Basico --}}
-            <div class="panel-footer">
-                <div class="row">
-                    <div class="col-xs-6 col-sm-6 ol-md-6 col-lg-6 text-left">
-                        <p><small>Quantidade do servico basico</small></p>
-                    </div>
-                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right">
-                        {!! Form::select("extra", ["1($".($instances['servico']['valor']*1).")","2($".($instances['servico']['valor']*2).")","3($".($instances['servico']['valor']*3).")","4($".($instances['servico']['valor']*4).")","5($".($instances['servico']['valor']*5).")","6($".($instances['servico']['valor']*6).")","7($".($instances['servico']['valor']*7).")","8($".($instances['servico']['valor']*8).")","9($".($instances['servico']['valor']*9).")","10($".($instances['servico']['valor']*10).")","11($".($instances['servico']['valor']*11).")","12($".($instances['servico']['valor']*12).")","13($".($instances['servico']['valor']*13).")","14($".($instances['servico']['valor']*14).")","15($".($instances['servico']['valor']*15).")"]) !!}
-                    </div>
-                </div>
             </div>
-
-        </div>
+        @endif
 
         {{-- Avaliacoes --}}
         <div class="panel panel-default">
@@ -324,7 +329,9 @@
                 <div class="row">
 
                     <div class="col-xs-7 col-sm-7 ol-md-7 col-lg-7 text-left">
-                        <p><small>Pedidos na fila</small></p>
+                        <p>
+                            <small>Pedidos na fila</small>
+                        </p>
                     </div>
 
                     <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 text-right">

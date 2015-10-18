@@ -6,6 +6,7 @@ use FreeCommerce\Servico;
 use Illuminate\Http\Request;
 use FreeCommerce\Http\Requests;
 use FreeCommerce\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class BuscaController extends Controller
@@ -32,7 +33,12 @@ class BuscaController extends Controller
             $comentario->User = DB::table('users')->where('id', $comentario->idUser)->first();
         }
 
-        //dd($data['servico']);
+        if($data['servico']->User['id'] != Auth::user()->id){
+            $data['servico']->compravel = true;
+        } else {
+            $data['servico']->compravel = false;
+        }
+
         return view('app.busca.servico.index.index')->with('instances', $data);
     }
 

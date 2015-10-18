@@ -46,7 +46,7 @@
                 <li><a href="{{ url('/auth/login') }}"> Acesar sua conta </a></li>
                 <li><a href="{{ url('/auth/register') }}"> Criar uma conta </a></li>
             @else
-                <li><a href="#"><i class="glyphicon glyphicon-shopping-cart"></i></a></li>
+                <li><a href="{{ route('controle.carrinho.index') }}"><i class="glyphicon glyphicon-shopping-cart"></i></a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                        aria-expanded="false"><i class="glyphicon glyphicon-user"></i> {{ Auth::user()->nome }} <span

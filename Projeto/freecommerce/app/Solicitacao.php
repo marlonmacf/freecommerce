@@ -20,18 +20,18 @@ class Solicitacao extends Model
         'updated_at'
     ];
 
-    public function Perfil()
+    public function User()
     {
-        return $this->belongsTo('FreeCommerce\Perfil');
+        return $this->belongsTo('FreeCommerce\User', 'idUser');
     }
 
     public function Servico()
     {
-        return $this->belongsTo('FreeCommerce\Servico');
+        return $this->belongsTo('FreeCommerce\Servico', 'idServico');
     }
 
-    public function Solicitacoes_has_Extras()
+    public function Extras()
     {
-        return $this->hasMany('FreeCommerce\Solicitacao_has_Extra');
+        return $this->belongsToMany('FreeCommerce\Extra', 'solicitacoes_has_tags', 'idSolicitacao', 'idExtra');
     }
 }

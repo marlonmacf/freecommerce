@@ -36,6 +36,10 @@ Route::group(['prefix' => 'controle', 'middleware' => 'auth'], function () {
     Route::resource('venda', 'Controle\VendaController');
     Route::resource('solicitacao', 'Controle\SolicitacaoController');
     Route::resource('pos-venda', 'Controle\PosVendaController');
+    Route::get('carrinho', ['as' => 'controle.carrinho.index', 'uses' => 'Controle\CarrinhoController@index']);
+    Route::post('carrinho/{servico}', ['as' => 'controle.carrinho.add', 'uses' => 'Controle\CarrinhoController@add']);
+    Route::get('carrinho/destroy', ['as' => 'controle.carrinho.destroy', 'uses' => 'Controle\CarrinhoController@destroy']);
+    Route::get('carrinho/finalizar', ['as' => 'controle.carrinho.finalizar', 'uses' => 'Controle\CarrinhoController@finalizar']);
 });
 
 //Route::resource('photo', 'PhotoController');
