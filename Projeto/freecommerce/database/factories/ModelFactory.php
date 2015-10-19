@@ -27,6 +27,7 @@ $factory->define(FreeCommerce\Competencia::class, function (Faker\Generator $fak
 });
 
 $factory->define(FreeCommerce\User::class, function (Faker\Generator $faker) {
+    $faker->addProvider(new Faker\Provider\pt_BR\Person($faker));
     return [
         'nome' => $faker->name,
         'email' => $faker->email,

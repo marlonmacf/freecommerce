@@ -20,7 +20,7 @@ class SolicitacaoController extends Controller
                 $servico = DB::table('servicos')->where('id', $solicitacao->idServico)->first();
                 $data['solicitacoes'][$i]['titulo'] = $servico->titulo;
                 $data['solicitacoes'][$i]['vencimento'] = date('d/m/Y', strtotime("+$servico->duracao days"));
-                $data['solicitacoes'][$i]['total'] = 5;//$data['solicitacoes'][$i]['total'] = $venda->total;
+                $data['solicitacoes'][$i]['total'] = $solicitacao->valor;
                 /*$status = "ATIVA";
                         if ($venda->status == 1) {
                             $status = "ENTREGUE";

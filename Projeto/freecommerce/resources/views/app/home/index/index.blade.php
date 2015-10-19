@@ -39,10 +39,15 @@
                                     <div class="container-fluid">
                                         <div class="panel panel-default">
 
-                                            <a href="{{ route('busca.servico', $servico->id) }}"><img
-                                                        src="{{ $servico->Imagens[0]->nome }}"
-                                                        class="img-responsive"></a>
-
+                                            @if(isset($servico->Imagens[0]))
+                                                <a href="{{ route('busca.servico', $servico->id) }}"><img
+                                                            src="{{ $servico->Imagens[0]->nome }}"
+                                                            class="img-responsive" width="600" height="400"></a>
+                                            @else
+                                                <a href="{{ route('busca.servico', $servico->id) }}"><img
+                                                            src="http://lorempixel.com/640/480/?"
+                                                            class="img-responsive" width="600" height="400"></a>
+                                            @endif
                                             <div class="panel-body">
                                                 @if(!empty($servico->descricao))
                                                     <p>

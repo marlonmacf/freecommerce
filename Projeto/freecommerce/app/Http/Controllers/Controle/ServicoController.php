@@ -58,7 +58,7 @@ class ServicoController extends Controller
             $servico->save();
 
             if (isset($request['chaves'])) {
-                $chaves = str_replace([' ', '-', '(', ')', ',', ';', ':', '|', '!', '"', '#', '$', '%', '&', '/', '=', '?', '~', '^', '>', '<', 'ª', 'º'], ",", $request['chaves']);
+                $chaves = str_replace([' ', '-', '(', ')', ',', ';', ':', '|', '!', '"', '#', '$', '%', '&', '/', '=', '?', '~', '^', '>', '<', 'ï¿½', 'ï¿½', '.'], ",", $request['chaves']);
                 $chaves = explode(',', $chaves);
 
                 foreach ($chaves as $i => $chave) {

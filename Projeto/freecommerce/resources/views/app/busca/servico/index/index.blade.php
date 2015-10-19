@@ -175,8 +175,9 @@
                         <div class="row">
                             <div class="form-group">
                                 <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 text-right">
-                                    {!! Form::button('Comprar Agora',['class' => 'btn btn-success']) !!}
-                                    {!! Form::button('<i class="glyphicon glyphicon-shopping-cart"></i>',['class' => 'btn btn-success']) !!}
+                                    {!! Form::open(array('url' => 'controle/carrinho/'.$instances['servico']['id'], 'method' =>'post' ,'class' => 'form-horizontal ajax', 'id' => 'comprar')) !!}
+                                    {!! Form::submit('Comprar Agora',['class' => 'btn btn-success btn-lg', 'id' =>  'btnComprar']) !!}
+                                    {!! Form::close() !!}
                                 </div>
                             </div>
                         </div>
@@ -240,8 +241,8 @@
                                         </div>
                                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-right">
                                             <div class="row text-right">
-                                                {!! Form::button('<i class="glyphicon glyphicon-thumbs-up"></i>',['class' => 'btn btn-success btn-xs']) !!}
-                                                {!! Form::button('<i class="glyphicon glyphicon-thumbs-down"></i>',['class' => 'btn btn-danger btn-xs']) !!}
+                                                {!! Form::button('<i class="glyphicon glyphicon-thumbs-up"></i>',['class' => 'btn btn-success btn-xs', 'disabled']) !!}
+                                                {!! Form::button('<i class="glyphicon glyphicon-thumbs-down"></i>',['class' => 'btn btn-danger btn-xs', 'disabled']) !!}
                                             </div>
                                         </div>
                                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-justify">
@@ -371,7 +372,7 @@
                     @endif
                     <hr class="featurette-divider">
                     <div class="text-right">
-                        {!! Form::button('<i class="glyphicon glyphicon-comment"></i> Contate-me',['class' => 'btn btn-default']) !!}
+                        {!! Form::button('<i class="glyphicon glyphicon-comment"></i> Contate-me',['class' => 'btn btn-default', 'disabled']) !!}
                     </div>
                 </small>
             </div>

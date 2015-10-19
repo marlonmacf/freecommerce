@@ -30,7 +30,7 @@ class VendaController extends Controller
                     $servico = DB::table('servicos')->where('id', $venda->idServico)->first();
                     $data['vendas'][$venda->id]['titulo'] = $servico->titulo;
                     $data['vendas'][$venda->id]['vencimento'] = date('d/m/Y', strtotime("+$servico->duracao days"));
-                    $data['vendas'][$venda->id]['total'] = 5;//$data['vendas'][$venda->id]['total'] = $venda->total;
+                    $data['vendas'][$venda->id]['total'] = $venda->valor;
                     /*$status = "ATIVA";
                     if ($venda->status == 1) {
                         $status = "ENTREGUE";
