@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10b8df12-71ca-4f96-8a37-d072c5743085" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controle/CarrinhoController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/app/controle/carrinho/index/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Controle/BuscaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controle/BuscaController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Solicitacao.php" afterPath="$PROJECT_DIR$/app/Solicitacao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/app/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/app/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/app/busca/servico/index/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/app/busca/servico/index/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Controle/CarrinhoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controle/CarrinhoController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="freecommerce.iws" />
@@ -34,7 +28,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="php artisan migrate:refresh --seed" />
       <command text="composer dump-autoload" />
       <command text="php artisan migrate:refresh --seed" />
       <command text="php artisan route:list" />
@@ -59,6 +52,7 @@
       <command text="php artisan route:list" />
       <command text="composer dumpautoload" />
       <command text="php artisan route:list" />
+      <command text="php artisan serve" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -458,7 +452,13 @@
       <option name="project" value="LOCAL" />
       <updated>1445199098731</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="PROJETO - Carrinho de compras">
+      <created>1445212410897</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1445212410897</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -525,7 +525,8 @@
     <MESSAGE value="CORREÇÕES - HomeController e BuscaController" />
     <MESSAGE value="VISUAL - form serviço" />
     <MESSAGE value="CRUD servico - store" />
-    <option name="LAST_COMMIT_MESSAGE" value="CRUD servico - store" />
+    <MESSAGE value="PROJETO - Carrinho de compras" />
+    <option name="LAST_COMMIT_MESSAGE" value="PROJETO - Carrinho de compras" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -875,16 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controle/CarrinhoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7714286">
-          <caret line="85" column="15" selection-start-line="85" selection-start-column="15" selection-end-line="85" selection-end-column="15" />
-          <folding>
-            <element signature="e#58#83#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controle/ServicoController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.71428573">
@@ -932,6 +923,16 @@
         <state vertical-scroll-proportion="0.58151263">
           <caret line="41" column="125" selection-start-line="41" selection-start-column="125" selection-end-line="41" selection-end-column="125" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controle/CarrinhoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8789916">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding>
+            <element signature="e#58#83#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

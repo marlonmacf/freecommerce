@@ -91,6 +91,8 @@ class CarrinhoController extends Controller
             throw $e;
         }
 
+        $this->destroy();
+
         return redirect()->route('controle.solicitacao.index');
     }
 }
