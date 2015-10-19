@@ -33,11 +33,13 @@ class BuscaController extends Controller
             $comentario->User = DB::table('users')->where('id', $comentario->idUser)->first();
         }
 
-        if($data['servico']->User['id'] != Auth::user()->id){
+        if(isset(Auth::user()->id) && $data['servico']->User['id'] != Auth::user()->id){
             $data['servico']->compravel = true;
         } else {
             $data['servico']->compravel = false;
         }
+
+        //dd($data);
 
         return view('app.busca.servico.index.index')->with('instances', $data);
     }

@@ -42,11 +42,11 @@
                                             @if(isset($servico->Imagens[0]))
                                                 <a href="{{ route('busca.servico', $servico->id) }}"><img
                                                             src="{{ $servico->Imagens[0]->nome }}"
-                                                            class="img-responsive" width="600" height="400"></a>
+                                                            class="img-responsive" width="640" height="480"></a>
                                             @else
                                                 <a href="{{ route('busca.servico', $servico->id) }}"><img
-                                                            src="http://lorempixel.com/640/480/?"
-                                                            class="img-responsive" width="600" height="400"></a>
+                                                            src="http://lorempixel.com/640/480/?{{$i}}"
+                                                            class="img-responsive" width="640" height="480"></a>
                                             @endif
                                             <div class="panel-body">
                                                 @if(!empty($servico->descricao))
@@ -104,14 +104,67 @@
                     {!! $instances['servicos']->render() !!}
                 </div>
 
-            </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-title">
+                            <h3><strong>VENDA SEU SERVICO</strong></h3>
 
-            <br/>
-            <hr class="featurette-divider">
-            <br/>
+                            <p>O que voce faz de melhor? Crie seu servico e comece a vender.</p>
+                            <br/><br/>
+                        </div>
+                        <div class="panel-footer">
+                            <object width="100%" height="100%" class="img-thumbnail">
+                                <param name="movie" value="http://www.youtube.com/v/2unbw55jMo0?rel=0"/>
+                                <embed src="http://www.youtube.com/v/2unbw55jMo0?rel=0&loop=1&audio=0&showinfo=0&autohide=1&autoplay=1"
+                                       type="application/x-shockwave-flash"
+                                       width="100%" height="666" class="img-fluid"/>
+                            </object>
+                        </div>
+                    </div>
+
+                    <br/>
+                    <hr class="featurette-divider">
+                    <br/>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-title">
+                            <h3><strong>VENDA SEU SERVICO</strong></h3>
+
+                            <p>Pessoas que amam o que fazem ajudaram voce a ter tudo feito.</p>
+                            <br/><br/>
+                        </div>
+                        <div class="panel-footer">
+                            <object width="100%" height="100%" class="img-thumbnail">
+                                <param name="movie" value="http://www.youtube.com/v/HopSnk5EAtg?rel=0"/>
+                                <embed src="http://www.youtube.com/v/HopSnk5EAtg?rel=0?rel=0&audio=0&autoplay=1&loop=1&showinfo=0&autohide=1"
+                                       type="application/x-shockwave-flash"
+                                       width="100%" height="666" class="img-fluid"/>
+                            </object>
+                        </div>
+                    </div>
+
+                    <br/>
+                    <hr class="featurette-divider">
+                    <br/>
+                </div>
+
+            </div>
 
         </div>
     </div>
+    </div>
+
+    <div class="container span9 text-center col-md-10 col-md-offset-1">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+            </div>
+        </div>
     </div>
 
 @endsection

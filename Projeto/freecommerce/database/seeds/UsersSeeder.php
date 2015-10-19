@@ -18,6 +18,7 @@ class UsersSeeder extends Seeder
             'email' => 'marlonmacf@gmail.com',
             'password' => Hash::make(123456),
             'descricao' => 'Perfil de administrador para testes...',
+            'foto' => 'http://lorempixel.com/640/480/?',
             //'remember_token' => Hash::make(123456),
         ]);
 

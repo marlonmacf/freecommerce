@@ -219,10 +219,17 @@
                             <div class="form-group" id="{{ $comentario['idUser'] }}">
 
                                 {{-- Foto --}}
-                                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-left">
-                                    <a href=""><img src="{{ $comentario['User']->foto }}"
-                                                    class="img-responsive img-circle"></a>
-                                </div>
+                                @if($comentario['User']->foto)
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-left">
+                                        <a href=""><img src="{{ $comentario['User']->foto }}"
+                                                        class="img-responsive img-circle"></a>
+                                    </div>
+                                @else
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-left">
+                                        <a href=""><img src="http://lorempixel.com/640/480/?4"
+                                                        class="img-responsive img-circle"></a>
+                                    </div>
+                                @endif
 
                                 {{-- Descricao --}}
                                 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 text-left">
@@ -314,8 +321,8 @@
                                 <i class="glyphicon glyphicon-star-empty"></i>
                             </small>
                             <strong>
-                                @if(isset($instances['avaliacao']))
-                                    {{ $instances['avaliacao'] }}
+                                @if(isset($instances['servico']->avaliacao))
+                                    {{ $instances['servico']->avaliacao }}
                                 @else
                                     0
                                 @endif
@@ -349,7 +356,7 @@
 
             <div class="panel-body text-justify">
 
-                @if(isset($instances['servico']->User))
+                @if(isset($instances['servico']->User['foto']))
                     <div class="text-center col-md-12 col-md-offset-0">
                         <a href=""><img src="{{ $instances['servico']->User['foto'] }}"
                                         class="img-responsive img-thumbnail"></a>

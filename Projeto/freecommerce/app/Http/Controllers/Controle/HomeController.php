@@ -19,7 +19,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $servicos = $this->servicoModel->with('Imagens')->paginate(6);
+        $servicos = $this->servicoModel->with('Imagens')->orderBy('avaliacao', 'desc')->paginate(6);
         $data['servicos'] = $servicos;
 
         //MENU CATEGORIAS
