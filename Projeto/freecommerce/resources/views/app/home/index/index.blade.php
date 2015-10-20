@@ -114,8 +114,8 @@
                         </div>
                         <div class="panel-footer">
                             <object width="100%" height="100%" class="img-thumbnail">
-                                <param name="movie" value="http://www.youtube.com/v/2unbw55jMo0?rel=0"/>
-                                <embed src="http://www.youtube.com/v/2unbw55jMo0?rel=0&loop=1&audio=0&showinfo=0&autohide=1&autoplay=1"
+                                <param name="movie" value="http://www.youtube.com/v/XDxvYKcJtVU?rel=0"/>
+                                <embed src="http://www.youtube.com/v/XDxvYKcJtVU?rel=0&loop=1&audio=0&showinfo=0&autohide=1&autoplay=1"
                                        type="application/x-shockwave-flash"
                                        width="100%" height="666" class="img-fluid"/>
                             </object>
@@ -137,8 +137,8 @@
                         </div>
                         <div class="panel-footer">
                             <object width="100%" height="100%" class="img-thumbnail">
-                                <param name="movie" value="http://www.youtube.com/v/HopSnk5EAtg?rel=0"/>
-                                <embed src="http://www.youtube.com/v/HopSnk5EAtg?rel=0?rel=0&audio=0&autoplay=1&loop=1&showinfo=0&autohide=1"
+                                <param name="movie" value="http://www.youtube.com/v/S9FQ_ozPMAU?rel=0"/>
+                                <embed src="http://www.youtube.com/v/S9FQ_ozPMAU?rel=0?rel=0&audio=0&autoplay=1&loop=1&showinfo=0&autohide=1"
                                        type="application/x-shockwave-flash"
                                        width="100%" height="666" class="img-fluid"/>
                             </object>
