@@ -130,7 +130,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-title">
-                            <h3><strong>VENDA SEU SERVICO</strong></h3>
+                            <h3><strong>SOLICITE UM SERVICO</strong></h3>
 
                             <p>Pessoas que amam o que fazem ajudaram voce a ter tudo feito.</p>
                             <br/><br/>
