@@ -101,9 +101,9 @@
                                                         @endif
                                                     </div>
                                                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                                        @if(!empty($servico->duracao))
+                                                        @if(!empty($servico->valor))
                                                             <p class="pull-right"><i
-                                                                        class="glyphicon glyphicon-usd">{{$servico->duracao}}</i>
+                                                                        class="glyphicon glyphicon-usd">{{$servico->valor}}</i>
                                                             </p>
                                                         @else
                                                             <p class="pull-right"><i

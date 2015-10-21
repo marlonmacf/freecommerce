@@ -55,7 +55,7 @@
                         <li><a href="{{ route('controle.servico.index') }}"> Meus Servicos </a></li>
                         <li><a href="{{ route('controle.venda.index') }}"> Minhas Vendas </a></li>
                         <li><a href="{{ route('controle.solicitacao.index') }}"> Minhas Solicitacoes </a></li>
-                        <li><a href="{{ route('controle.perfil.index') }}"> Meu Perfil </a></li>
+                        {{--<li><a href="{{ route('controle.perfil.index') }}"> Meu Perfil </a></li>--}}
                         <div class="nav-divider"></div>
                         <li><a href="{{ url('/auth/logout') }}"> Sair </a></li>
                     </ul>

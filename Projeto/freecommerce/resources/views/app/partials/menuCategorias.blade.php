@@ -11,12 +11,15 @@
                                aria-expanded="false"> {{ $categoria->nome }} <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 @foreach($instances['competencias'][$categoria->id] as $competencia)
-                                    <li><a href="{{ route('busca.servicos.competencias', $competencia->id) }}"> {{ $competencia->nome }} </a></li>
+                                    <li>
+                                        <a href="{{ route('busca.servicos.competencias', $competencia->id) }}"> {{ $competencia->nome }} </a>
+                                    </li>
                                 @endforeach
                             </ul>
                         </li>
                     @endif
                 @endforeach
+                {{--
                 <li class="dropdown">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button"
                        aria-expanded="false"> Mais <span class="caret"></span></a>
@@ -28,6 +31,7 @@
                         @endforeach
                     </ul>
                 </li>
+                --}}
 
             </ul>
         </div>
